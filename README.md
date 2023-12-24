@@ -1,6 +1,6 @@
 #dcodeKi
 ________
-![Category](https://en.wikipedia.org/wiki/Cryptography)<br>
+![Category : Cryptography](https://en.wikipedia.org/wiki/Cryptography)<br>
 A Python GUI Tool for Encoding and Decoding 
 
 ##Table of Contents
