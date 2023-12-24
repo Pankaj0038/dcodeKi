@@ -7,7 +7,7 @@ from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout 
 from kivy.uix.button import Button 
 from encoders import rot47,rot13,mybase64,mybase32
-import c2c
+from feature import c2c
 
 #load the kv file 
 Builder.load_file('dcodeKi.kv')
