@@ -1,0 +1,70 @@
+# Globally set the size of the label text
+<Label>
+	font_size:28
+
+# Overall layout
+<DcodLayout>
+	cipher:cipher
+	BoxLayout:
+		orientation: 'vertical'
+		size: root.width,root.height
+		spacing: 20
+		padding: 10
+		
+		# Heading
+		Label:
+			id: string2
+			text: '[b]'+"dcodeKi" + '[/b]' 
+			markup:True
+		
+		# Blank label where the output prints
+		Label:
+			id: string
+		
+		# Input field
+		TextInput:
+			id: cipher
+			font_size:25
+			multiline: False
+
+		# Grid layout for the button (within the box layout)
+		GridLayout:
+			cols: 5
+			Button:
+				text: "B64 dcode"
+				font_size: 20
+				pos_hint: {'center_x':0}
+				size_hint: (0.20,None)
+				height: 50
+				on_press: root.press('b64') # On button press send the value 'b64' for base64 decode
+			Button:
+				text: "B64 ecode"
+				font_size: 20
+				size_hint: (0.20,None)
+				height: 50
+				on_press: root.press('b64e')
+			Button:
+				text: "ROT13"
+				font_size: 20
+				size_hint: (0.20,None)
+				height: 50
+				on_press: root.press('rot13')
+			Button:
+				text: "ROT47"
+				font_size: 20
+				size_hint: (0.20,None)
+				height: 50
+				on_press: root.press('rot47')
+			Button:
+				text: "B32 dcode"
+				font_size: 20
+				size_hint: (0.20,None)
+				height: 50
+				on_press: root.press('b32')
+			Button:
+				text: "B32 ecode"
+				font_size: 20
+				size_hint: (0.20,None)
+				height: 50
+				on_press: root.press('b32e')
+
