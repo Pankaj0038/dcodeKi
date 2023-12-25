@@ -4,9 +4,18 @@ ________
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 ## Table of Contents
+- [About](#about)
 - [Requirements](#requirements)
 - [Install & run](#install--run)
 - [Contribute](#contribute)
+
+## About
+[dcodeKi](https://github.com/Pankaj0038/dcodeKi) is a Python GUI based encoder-decoder tool using Kivy framework<p>
+**Features**
+- Auto copy to clipboard (everytime after encoding or decoding it automatically copy the ouput to clipboard)
+- GUI
+- Numerous Encoder-decoders
+
 ## Requirements
 Make sure to install all the requirement in your system
 - [Python 3.7 - 3.11](https://www.python.org/downloads/)<br>
@@ -31,3 +40,6 @@ To run the tool in your system (**using terminal**)
 
 
 ## Contribute
+To contribute in this project
+1. Go to [issues](https://github.com/Pankaj0038/dcodeKi/issues) section
+2. Comment under any issues or create a new issue
