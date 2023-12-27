@@ -22,6 +22,7 @@ Make sure to install all the requirement in your system
 2. Then go to the folder and install the libraries <br>
    ```cd dcodeKi-main```
    ```pip install -r requirements.txt```
+   [Note that if you are in Windows then run powershell as administrator and then run the commands]
 
 ## Install & run
 To run the tool in your system (**using terminal**)
