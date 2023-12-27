@@ -18,8 +18,10 @@ ________
 
 ## Requirements
 Make sure to install all the requirement in your system
-- [Python 3.7 - 3.11](https://www.python.org/downloads/)<br>
-- [Kivy 2.2.1](https://kivy.org/doc/stable/gettingstarted/installation.html)<br>
+1. First install [Python 3.7 - 3.11](https://www.python.org/downloads/)<br>
+2. Then go to the folder and install the libraries <br>
+   ```cd dcodeKi-main```
+   ```pip install -r requirements.txt```
 
 ## Install & run
 To run the tool in your system (**using terminal**)
