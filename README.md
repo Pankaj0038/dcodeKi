@@ -20,8 +20,12 @@ ________
 Make sure to install all the requirement in your system
 1. First install [Python 3.7 - 3.11](https://www.python.org/downloads/)<br>
 2. Then go to the folder and install the libraries <br>
-   ```cd dcodeKi-main```
-   ```pip install -r requirements.txt```
+   ```(bash)
+   cd dcodeKi-main
+   ```
+   ```(bash)
+   pip install -r requirements.txt
+   ```
    [Note that if you are in Windows then run powershell as administrator and then run the commands]
 
 ## Install & run
