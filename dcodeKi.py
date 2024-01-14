@@ -1,4 +1,4 @@
-e#!usr/bin/python3
+#!usr/bin/python3
 
 from kivy.app import App 
 from kivy.lang import Builder
