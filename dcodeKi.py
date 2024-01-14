@@ -7,7 +7,7 @@ from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout 
 from kivy.uix.button import Button 
 
-from encoders import rot47,rot13,mybase64,mybase32, binary2text
+from encoders import rot47,rot13,mybase64,mybase32, text2binary, binary2text
 
 from encoders import hex_encode
 
@@ -55,6 +55,11 @@ class DcodLayout(Widget):
 			case 'b32e':
 				decoded = mybase32.encode(cipher)
 				c2c.copy(decoded)
+			
+			case 't2b':
+				decoded = text2binary.encode(cipher)
+				c2c.copy(decoded)
+			
 			case 'b2t' :
 				decoded = binary2text.decode(cipher)
 				c2c.copy(decoded)
