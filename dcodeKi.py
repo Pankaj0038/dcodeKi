@@ -7,10 +7,9 @@ from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout 
 from kivy.uix.button import Button 
 
-from encoders import rot47,rot13,mybase64,mybase32
 from encoders import rot47,rot13,mybase64,mybase32, binary2text
 
-from encoders import rot47,rot13,mybase64,mybase32, hex_encode
+from encoders import hex_encode
 
 from feature import c2c
 
