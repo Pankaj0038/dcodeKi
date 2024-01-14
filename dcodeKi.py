@@ -57,7 +57,7 @@ class DcodLayout(Widget):
 				decoded = mybase32.encode(cipher)
 				c2c.copy(decoded)
 			case 'binanry2text' :
-				decoded = binary2text(cipher)
+				decoded = binary2text.decode(cipher)
 				c2c.copy(decoded)
 
 			case "hex_encode":
