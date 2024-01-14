@@ -64,6 +64,10 @@ class DcodLayout(Widget):
 				decoded = hex_encode.encode(cipher)
 				c2c.copy(decoded)
 
+			case "hex_decode":
+				decoded = hex_encode.decode(cipher)
+				c2c.copy(decoded)
+
 		#replace the text in id="string" by the value of the "decoded" variable
 		self.ids.string.text = f'{decoded}'
 		#after printing the output clear the input field
