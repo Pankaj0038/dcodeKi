@@ -9,8 +9,8 @@ def binary2text(s):
 
 def decode(b):
     if " " in b:
-      bin = b.strip()
-      text = _binary2text(b)
+      binary = b.strip()
+      text = _binary2text(binary)
     else :
       text = binary2text(b)
     return text
