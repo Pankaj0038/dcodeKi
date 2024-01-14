@@ -1,4 +1,4 @@
-#!usr/bin/python3
+e#!usr/bin/python3
 
 from kivy.app import App 
 from kivy.lang import Builder
@@ -57,7 +57,7 @@ class DcodLayout(Widget):
 				decoded = mybase32.encode(cipher)
 				c2c.copy(decoded)
 			case 'binanry2text' :
-				decoded = binary2text.binary2text(cipher)
+				decoded = binary2text.decoder(cipher)
 				c2c.copy(decoded)
 
 			case "hex_encode":
