@@ -8,8 +8,9 @@ def binary2text(s):
   return ''.join(chr(int(s[i*8:i*8+8],2)) for i in range(len(s)//8))
 
 def decode(b):
-    if b[8]==" ":
-      text = _binary2text(b)
+    if " " in b:
+      binary = b.strip()
+      text = _binary2text(binary)
     else :
       text = binary2text(b)
     return text
