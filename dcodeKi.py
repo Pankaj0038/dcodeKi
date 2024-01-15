@@ -83,6 +83,14 @@ class DcodLayout(Widget):
 				decoded = morse.decode(cipher)
 				c2c.copy(decoded)
 
+			case "vigenere_encode":
+				decoded = vigenere.encode(cipher)
+				c2c.copy(decoded)
+
+			case "vigenere_decode":
+				decoded = vigenere.decode(cipher)
+				c2c.copy(decoded)
+
 
 		#replace the text in id="string" by the value of the "decoded" variable
 		self.ids.string.text = f'{decoded}'
