@@ -7,13 +7,7 @@ from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout 
 from kivy.uix.button import Button 
 
-from encoders import rot47,rot13,mybase64,mybase32
-from encoders import rot47,rot13,mybase64,mybase32, binary2text
-
-from encoders import rot47,rot13,mybase64,mybase32, hex_encode
-from encoders import rot47,rot13,mybase64,mybase32, text2XOR2text
-
-
+from encoders import rot47,rot13,mybase64,mybase32, text2XOR2text, hex_encode ,  binary2text, text2binary
 from feature import c2c
 
 #load the kv file 
@@ -58,7 +52,12 @@ class DcodLayout(Widget):
 			case 'b32e':
 				decoded = mybase32.encode(cipher)
 				c2c.copy(decoded)
-			case 'binanry2text' :
+			
+			case 't2b':
+				decoded = text2binary.encode(cipher)
+				c2c.copy(decoded)
+			
+			case 'b2t' :
 				decoded = binary2text.decode(cipher)
 				c2c.copy(decoded)
 
@@ -68,6 +67,8 @@ class DcodLayout(Widget):
 
 			case "text2XOR2text":
 				decoded = text2XOR2text.encode(cipher)
+			case "hex_decode":
+				decoded = hex_encode.decode(cipher)
 				c2c.copy(decoded)
 
 		#replace the text in id="string" by the value of the "decoded" variable

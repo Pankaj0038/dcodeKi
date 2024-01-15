@@ -68,19 +68,30 @@
 				height: 50
 				on_press: root.press('b32e')
 			Button:
-
+				text: "Binary Encode"
+				font_size: 20
+				size_hint: (0.20,None)
+				height: 50
+				on_press: root.press('t2b')
+			Button:
 				text: "Binary Decode"
 				font_size: 20
 				size_hint: (0.20,None)
 				height: 50
-				on_press: root.press('binary2text')
+				on_press: root.press('b2t')
 			Button:
 				text: "Hex Encode"
 				font_size: 20
 				size_hint: (0.20,None)
 				height: 50
 				on_press: root.press('hex_encode')
-            Button:
+      Button:
+				text: "Hex Decode"
+				font_size: 20
+				size_hint: (0.20,None)
+				height: 50
+				on_press: root.press('hex_decode')
+      Button:
 				text: "XOR Encode"
 				font_size: 20
 				size_hint: (0.20,None)
