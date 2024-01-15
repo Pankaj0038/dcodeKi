@@ -1,7 +1,7 @@
-#!/usr/bin/python
+##!/usr/bin/python
 import string
-alp = string.ascii_lowercase()
-ALP = string.ascii_uppercase()
+alp = string.ascii_lowercase
+ALP = string.ascii_uppercase
 def decatbash(message):
     cipher = ''
     for letter in message:

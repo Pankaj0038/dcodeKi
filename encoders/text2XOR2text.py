@@ -16,37 +16,39 @@ def xor_binary_strings(binary_str1, binary_str2):
         #print("result is",result)
     return result
 
-def encode(s):
-    key = 10 #Default Key
-
-    letters_array = []
-    key_array = []
-    for char in s:
-        letters_array.append(char)
-    print("")
-    
-    flag = 0
+def encode(s,key):
+     
+    #ignore
+    #letters_array = []
+    #key_array = []
+    #for char in s:
+        #letters_array.append(char)
+    #print("")
+    #flag = 0
     #Reading the array backwards, so that we can separate the key and text part
-    for i in range(len(letters_array)- 1, -1, -1):
-        if letters_array[i].isdigit():
-            pass
-        elif letters_array[i] == " ":
-            key_array = letters_array[(i+1):]
-            key = int(''.join(key_array))
-            letters_array = letters_array[:(i)]
-            flag = 1
-            break
+    #for i in range(len(letters_array)- 1, -1, -1):
+        #if letters_array[i].isdigit():
+            #pass
+        #elif letters_array[i] == " ":
+            #key_array = letters_array[(i+1):]
+            #key = int(''.join(key_array))
+            #letters_array = letters_array[:(i)]
+            #flag = 1
+            #break
+    #performing the final steps
+    #text = ''.join(letters_array)
 
-    if flag == 0:
+
+    if key == "":
+        key = 10 #Default Key
         print("No Key is given, hence default key - 10 is being used")
 
-    #performing the final steps
-    text = ''.join(letters_array)
+    key = int(key)
     print("key is:",key)
 
     # Converting text and key into binary
-    text_binary = string_to_binary(text)
-    key_binary = format(key, '08b')  #Assuming an 8-bit key, adjust as needed
+    text_binary = string_to_binary(s)
+    key_binary = format(key, '08b')
     print("key_bin is:",key_binary)
 
     result_fina = []
@@ -66,5 +68,6 @@ def encode(s):
 
 if __name__ == '__main__':
     b = input("Enter a text to decode[Format:(Text Key)]: ")
-    print(encode(b))
+    k = input("Enter Key")
+    print(encode(b,k))
 
