@@ -7,7 +7,7 @@ from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout 
 from kivy.uix.button import Button 
 
-from encoders import rot47,rot13,mybase64,mybase32, text2XOR2text, hex_encode ,  binary2text, text2binary, morse
+from encoders import rot47,rot13,mybase64,mybase32, text2XOR2text, hex_encode ,  binary2text, text2binary, morse,atbash
 from feature import c2c
 
 #load the kv file 
@@ -17,10 +17,8 @@ class DcodLayout(Widget):
 
 	#create an object property to store the input
 	cipher = ObjectProperty(None)
-
 	def __init__(self,**kwargs):
 		super(DcodLayout,self).__init__(**kwargs)
-	
 	#fuction which define the functionality of the buttons
 	def press(self,method):
 
@@ -77,6 +75,9 @@ class DcodLayout(Widget):
 
 			case "morse_decode":
 				decoded = morse.decode(cipher)
+				c2c.copy(decoded)
+			case "atci":
+				decoded = atbash.decatbash(cipher)
 				c2c.copy(decoded)
 
 
