@@ -69,7 +69,7 @@ class DcodLayout(Widget):
 				c2c.copy(decoded)
 
 			case "text2XOR2text":
-				decoded = text2XOR2text.encode(cipher)
+				decoded = text2XOR2text.encode(cipher,cipher_key)
 			case "hex_decode":
 				decoded = hex_encode.decode(cipher)
 				c2c.copy(decoded)
