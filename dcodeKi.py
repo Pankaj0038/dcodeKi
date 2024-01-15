@@ -1,4 +1,4 @@
-#!usr/bin/python3
+##!usr/bin/python3
 
 from kivy.app import App 
 from kivy.lang import Builder
@@ -11,6 +11,8 @@ from encoders import rot47,rot13,mybase64,mybase32
 from encoders import rot47,rot13,mybase64,mybase32, binary2text
 
 from encoders import rot47,rot13,mybase64,mybase32, hex_encode
+from encoders import rot47,rot13,mybase64,mybase32, text2XOR2text
+
 
 from feature import c2c
 
@@ -62,6 +64,10 @@ class DcodLayout(Widget):
 
 			case "hex_encode":
 				decoded = hex_encode.encode(cipher)
+				c2c.copy(decoded)
+
+			case "text2XOR2text":
+				decoded = text2XOR2text.encode(cipher)
 				c2c.copy(decoded)
 
 		#replace the text in id="string" by the value of the "decoded" variable
