@@ -84,11 +84,11 @@ class DcodLayout(Widget):
 				c2c.copy(decoded)
 
 			case "vigenere_encode":
-				decoded = vigenere.encode(cipher)
+				decoded = vigenere.encode(cipher, cipher_key)
 				c2c.copy(decoded)
 
 			case "vigenere_decode":
-				decoded = vigenere.decode(cipher)
+				decoded = vigenere.decode(cipher, cipher_key)
 				c2c.copy(decoded)
 
 
