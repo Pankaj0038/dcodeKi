@@ -7,7 +7,7 @@ from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout 
 from kivy.uix.button import Button 
 
-from encoders import rot47,rot13,mybase64,mybase32, text2XOR2text, hex_encode ,  binary2text, text2binary
+from encoders import rot47,rot13,mybase64,mybase32, text2XOR2text, hex_encode ,  binary2text, text2binary, morse
 from feature import c2c
 
 #load the kv file 
@@ -70,6 +70,15 @@ class DcodLayout(Widget):
 			case "hex_decode":
 				decoded = hex_encode.decode(cipher)
 				c2c.copy(decoded)
+
+			case "morse_encode":
+				decoded = morse.encode(cipher)
+				c2c.copy(decoded)
+
+			case "morse_decode":
+				decoded = morse.decode(cipher)
+				c2c.copy(decoded)
+
 
 		#replace the text in id="string" by the value of the "decoded" variable
 		self.ids.string.text = f'{decoded}'
