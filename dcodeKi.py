@@ -1,4 +1,4 @@
-#!usr/bin/python3
+##!usr/bin/python3
 
 from kivy.app import App 
 from kivy.lang import Builder
@@ -7,10 +7,7 @@ from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout 
 from kivy.uix.button import Button 
 
-from encoders import rot47,rot13,mybase64,mybase32, text2binary, binary2text
-
-from encoders import hex_encode
-
+from encoders import rot47,rot13,mybase64,mybase32, text2XOR2text, hex_encode ,  binary2text, text2binary
 from feature import c2c
 
 #load the kv file 
@@ -68,6 +65,8 @@ class DcodLayout(Widget):
 				decoded = hex_encode.encode(cipher)
 				c2c.copy(decoded)
 
+			case "text2XOR2text":
+				decoded = text2XOR2text.encode(cipher)
 			case "hex_decode":
 				decoded = hex_encode.decode(cipher)
 				c2c.copy(decoded)
