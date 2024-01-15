@@ -18,6 +18,9 @@ class DcodLayout(Widget):
 	#create an object property to store the input
 	cipher = ObjectProperty(None)
 
+	#create an object property to store the key
+	cipher_key = ObjectProperty(None)
+
 	def __init__(self,**kwargs):
 		super(DcodLayout,self).__init__(**kwargs)
 	
@@ -26,6 +29,7 @@ class DcodLayout(Widget):
 
 		#on button press store the input field in cipher object
 		cipher = self.cipher.text
+		cipher_key = self.cipher_key.text
 		
 		#match case for multiple encoders/decoders (match the button (which is pressed) and apply function according to it)
 		match method:
@@ -84,6 +88,7 @@ class DcodLayout(Widget):
 		self.ids.string.text = f'{decoded}'
 		#after printing the output clear the input field
 		self.cipher.text=''
+		self.cipher_key.text=''
 
 #App building
 class DcodeKiApp(App):
