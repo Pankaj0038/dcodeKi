@@ -5,6 +5,7 @@
 # Overall layout
 <DcodLayout>
 	cipher:cipher
+	cipher_key:cipher_key
 	BoxLayout:
 		orientation: 'vertical'
 		size: root.width,root.height
@@ -20,10 +21,21 @@
 		# Blank label where the output prints
 		Label:
 			id: string
+			font_size:25
 		
 		# Input field
 		TextInput:
+		    hint_text: "Enter Input: "
+			foreground_color: 0, 0, 1, 1
 			id: cipher
+			font_size:25
+			multiline: False
+
+		# Input field
+		TextInput:
+		    hint_text: "Enter Key: "
+			foreground_color: 1, 0, 0, 1
+			id: cipher_key
 			font_size:25
 			multiline: False
 
@@ -115,3 +127,7 @@
 				size_hint: (0.20,None)
 				height: 50
 				on_press: root.press('atci')
+
+		Label:  #Adding Empty Label below buttons for blank space as XOR button was going down into the screen
+			size_hint_x: None
+			widtht: '200dp'
