@@ -21,10 +21,15 @@ class DcodLayout(Widget):
 	#create an object property to store the key
 	cipher_key = ObjectProperty(None)
 
+	#string to store encoded/decoded text
+	decoded = ""
+
 	def __init__(self,**kwargs):
 		super(DcodLayout,self).__init__(**kwargs)
+
 	#fuction which define the functionality of the buttons
 	def press(self,method):
+		global decoded
 
 		#on button press store the input field in cipher object
 		cipher = self.cipher.text
@@ -34,64 +39,51 @@ class DcodLayout(Widget):
 		match method:
 			case 'b64':
 				decoded = mybase64.decode(cipher) #button == base64 decode 
-				c2c.copy(decoded) #copy to clipboard
 
 			case 'b64e':
 				decoded = mybase64.encode(cipher)
-				c2c.copy(decoded)
 
 			case 'rot13':
 				decoded = rot13.rot13(cipher)
-				c2c.copy(decoded)
 
 			case 'rot47':
 				decoded = rot47.rot47(cipher)
-				c2c.copy(decoded)
 
 			case 'b32':
 				decoded = mybase32.decode(cipher)
-				c2c.copy(decoded)
 
 			case 'b32e':
 				decoded = mybase32.encode(cipher)
-				c2c.copy(decoded)
 			
 			case 't2b':
 				decoded = text2binary.encode(cipher)
-				c2c.copy(decoded)
 			
 			case 'b2t' :
 				decoded = binary2text.decode(cipher)
-				c2c.copy(decoded)
-
-			case "hex_encode":
-				decoded = hex_encode.encode(cipher)
-				c2c.copy(decoded)
 
 			case "text2XOR2text":
 				decoded = text2XOR2text.encode(cipher,cipher_key)
+
+			case "hex_encode":
+				decoded = hex_encode.encode(cipher)
+
 			case "hex_decode":
 				decoded = hex_encode.decode(cipher)
-				c2c.copy(decoded)
 
 			case "morse_encode":
 				decoded = morse.encode(cipher)
-				c2c.copy(decoded)
 
 			case "morse_decode":
 				decoded = morse.decode(cipher)
-				c2c.copy(decoded)
+
 			case "atci":
 				decoded = atbash.decatbash(cipher)
-				c2c.copy(decoded)
 
 			case "vigenere_encode":
 				decoded = vigenere.encode(cipher, cipher_key)
-				c2c.copy(decoded)
 
 			case "vigenere_decode":
 				decoded = vigenere.decode(cipher, cipher_key)
-				c2c.copy(decoded)
 
 
 		#replace the text in id="string" by the value of the "decoded" variable
@@ -99,6 +91,12 @@ class DcodLayout(Widget):
 		#after printing the output clear the input field
 		self.cipher.text=''
 		self.cipher_key.text=''
+
+	def copy(self):
+		try:
+			c2c.copy(decoded)
+		except:
+			self.ids.string.text = "Nothing to copy!"
 
 #App building
 class DcodeKiApp(App):

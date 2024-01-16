@@ -23,6 +23,15 @@
 			id: string
 			font_size:25
 		
+		# copy button
+		Button:
+			text: "Copy"
+			font_size: 20
+			pos_hint: {'center_x':0.5}
+			size_hint: (0.20,None)
+			height: 50
+			on_press: root.copy()
+
 		# Input field
 		TextInput:
 		    hint_text: "Enter Input: "
