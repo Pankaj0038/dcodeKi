@@ -1,2 +1,3 @@
 kivy[full]
+kivymd
 pyperclip
