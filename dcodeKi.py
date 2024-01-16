@@ -6,6 +6,7 @@ from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout 
 from kivy.uix.button import Button 
+from kivymd.app import MDApp
 
 from encoders import rot47,rot13,mybase64,mybase32, text2XOR2text, hex_encode ,  binary2text, text2binary, morse,atbash
 from feature import c2c
@@ -99,8 +100,9 @@ class DcodLayout(Widget):
 			self.ids.string.text = "Nothing to copy!"
 
 #App building
-class DcodeKiApp(App):
+class DcodeKiApp(MDApp):
 	def build(self):
+		self.theme_cls.theme_style = "Dark"
 		return DcodLayout()
 
 #If executes this file then run the program 
