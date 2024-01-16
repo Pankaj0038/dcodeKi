@@ -23,6 +23,13 @@
 			id: string
 			font_size:25
 		
+		# copy button
+		MDIconButton:
+			icon: "content-copy"
+			pos_hint: {'center_x':0.5}
+			size_hint: (0.20,None)
+			on_press: root.copy()
+
 		# Input field
 		TextInput:
 		    hint_text: "Enter Input: "
