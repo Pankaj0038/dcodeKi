@@ -85,6 +85,14 @@ class DcodLayout(Widget):
 				decoded = atbash.decatbash(cipher)
 				c2c.copy(decoded)
 
+			case "vigenere_encode":
+				decoded = vigenere.encode(cipher, cipher_key)
+				c2c.copy(decoded)
+
+			case "vigenere_decode":
+				decoded = vigenere.decode(cipher, cipher_key)
+				c2c.copy(decoded)
+
 
 		#replace the text in id="string" by the value of the "decoded" variable
 		self.ids.string.text = f'{decoded}'
