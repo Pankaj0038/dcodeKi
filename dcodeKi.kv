@@ -140,12 +140,25 @@
 				size_hint: (0.20,None)
 				height: 50
 				on_press: root.press('vigenere_decode')
-        
+			Button:
 				text: "Atbash Cipher"
 				font_size: 20
 				size_hint: (0.20,None)
 				height: 50
 				on_press: root.press('atci')
+			Button:
+				text: "Octal Encode"
+				font_size: 20
+				size_hint: (0.20,None)
+				height: 50
+				on_press: root.press('octal_encode')
+			Button:
+				text: "Octal Decode"
+				font_size: 20
+				size_hint: (0.20,None)
+				height: 50
+				on_press: root.press('octal_decode')
+			
 
 		Label:  #Adding Empty Label below buttons for blank space as XOR button was going down into the screen
 			size_hint_x: None
