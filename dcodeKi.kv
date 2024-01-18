@@ -20,6 +20,7 @@
 		
 		# Blank label where the output prints
 		Label:
+			font_name: "fonts/ArialUnicodeMS.ttf"
 			id: string
 			font_size:25
 		
@@ -32,6 +33,7 @@
 
 		# Input field
 		TextInput:
+			font_name: "fonts/ArialUnicodeMS.ttf"
 		    hint_text: "Enter Input: "
 			foreground_color: 0, 0, 1, 1
 			id: cipher
@@ -40,6 +42,7 @@
 
 		# Input field
 		TextInput:
+			font_name: "fonts/ArialUnicodeMS.ttf"
 		    hint_text: "Enter Key: "
 			foreground_color: 1, 0, 0, 1
 			id: cipher_key
@@ -140,12 +143,37 @@
 				size_hint: (0.20,None)
 				height: 50
 				on_press: root.press('vigenere_decode')
-        
+			Button:
 				text: "Atbash Cipher"
 				font_size: 20
 				size_hint: (0.20,None)
 				height: 50
 				on_press: root.press('atci')
+			Button:
+				text: "Octal Encode"
+				font_size: 20
+				size_hint: (0.20,None)
+				height: 50
+				on_press: root.press('octal_encode')
+			Button:
+				text: "Octal Decode"
+				font_size: 20
+				size_hint: (0.20,None)
+				height: 50
+				on_press: root.press('octal_decode')
+			Button:
+				text: "ROT8000 Encode"
+				font_size: 20
+				size_hint: (0.20,None)
+				height: 50
+				on_press: root.press('rot8000_encode')
+			Button:
+				text: "ROT8000 Decode"
+				font_size: 20
+				size_hint: (0.20,None)
+				height: 50
+				on_press: root.press('rot8000_decode')			
+			
 
 		Label:  #Adding Empty Label below buttons for blank space as XOR button was going down into the screen
 			size_hint_x: None
