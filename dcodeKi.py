@@ -8,7 +8,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button 
 from kivymd.app import MDApp
 
-from encoders import rot47, rot13, mybase64, mybase32, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal
+from encoders import rot47, rot13, mybase64, mybase32, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000
 from feature import c2c
 
 #load the kv file 
@@ -91,6 +91,12 @@ class DcodLayout(Widget):
 
 			case "octal_decode":
 				decoded = octal.decode(cipher)
+
+			case "rot8000_encode":
+				decoded = rot8000.encode(cipher)
+
+			case "rot8000_decode":
+				decoded = rot8000.decode(cipher)
 
 
 		#replace the text in id="string" by the value of the "decoded" variable
