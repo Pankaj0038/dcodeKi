@@ -11,6 +11,14 @@
 		size: root.width,root.height
 		spacing: 20
 		padding: 10
+
+		# Set the background color
+        canvas.before:
+            Color:
+                rgba: 0.2, 0.2, 0.2, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
 		
 		# Heading
 		Label:
