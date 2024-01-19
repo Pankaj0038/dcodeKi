@@ -98,8 +98,11 @@ class DcodLayout(Widget):
 			case "rot8000_decode":
 				decoded = rot8000.decode(cipher)
 
-			case "base58":
+			case "base58d":
 				decoded = base58.base58_decode(cipher)
+			
+			case "base58e":
+				decoded = base58.base58_encode(cipher)
 
 
 		#replace the text in id="string" by the value of the "decoded" variable
