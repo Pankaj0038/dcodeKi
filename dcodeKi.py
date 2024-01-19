@@ -8,13 +8,17 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button 
 from kivymd.app import MDApp
 
+from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.core.window import Window
+from kivy.clock import Clock
+
 from encoders import rot47, rot13, mybase64, mybase32, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58
 from feature import c2c
 
 #load the kv file 
 Builder.load_file('dcodeKi.kv')
 
-class DcodLayout(Widget):
+class DcodLayout(Screen):
 
 	#create an object property to store the input
 	cipher = ObjectProperty(None)
@@ -116,10 +120,20 @@ class DcodLayout(Widget):
 
 #App building
 class DcodeKiApp(MDApp):
-	def build(self):
-		self.theme_cls.theme_style = "Dark"
-		return DcodLayout()
+    def build(self):
+        sm = ScreenManager()
+        sm.add_widget(Builder.load_file("splash.kv"))
+        sm.add_widget(DcodLayout(name='main'))
+        return sm
 
+    def on_start(self):
+        # Schedule the transition to the main screen after 5 seconds
+        Clock.schedule_once(self.show_main_screen, 5)
+
+    def show_main_screen(self, dt):
+        sm = self.root
+        sm.current = 'main'
+	
 #If executes this file then run the program 
 if __name__ == '__main__':
 	DcodeKiApp().run()
