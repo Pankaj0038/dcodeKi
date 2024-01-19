@@ -21,7 +21,7 @@ def base58_decode(ciphertext):
         print("result // 256 =  ",result)
 
     decoded_text = result_bytes[::-1].decode('utf-8')
-    print(decoded_text)
+    return decoded_text
 
 
 def base58_encode(plaintext):
