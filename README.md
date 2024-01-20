@@ -26,6 +26,10 @@ Make sure to install all the requirement in your system<br>
    **Framework to create the GUI (Graphical User Interface)**
 3. [Pyperclip](https://pypi.org/project/pyperclip/)<br>
    **Crossplatform module for the copy paste function**
+4. [KivyMD][(https://www.python.org/downloads/](https://kivymd.readthedocs.io/en/latest/index.html))<br>
+   **A framework for cross-platform, touch-enabled graphical applications**<br>
+5.Code Editor and Terminal<br>
+**Terminal or command prompt will be useful during development for running and testing the application**
 ## Install & run
 To run the tool in your system (**using terminal**)
 1. First clone the repo
@@ -49,6 +53,18 @@ To run the tool in your system (**using terminal**)
    ```(bash)
    python3 dcodeKi.py
    ```
+## Screenshots
+1.  Basic Interface Of Application
+![image](https://github.com/daksh1210jain/dcodeKi/assets/137384322/695c8ec1-cc76-4845-9627-08fe8ce0bf26)
+2. Implementation of B64 encode
+![image](https://github.com/daksh1210jain/dcodeKi/assets/137384322/f1d86650-5860-4d31-8342-a14ea479a28c)
+3. The Loading Screen of the page 
+![image](https://github.com/daksh1210jain/dcodeKi/assets/137384322/a8d6b496-f500-4698-8721-3b8799b7e8b8)
+4. The copy button when clicked copies the output to clipboard
+   ![image](https://github.com/daksh1210jain/dcodeKi/assets/137384322/ec437ea7-66bb-49fe-ae94-16a3ab5083a1)
+
+
+
 
 
 ## Contribute
