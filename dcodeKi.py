@@ -1,5 +1,5 @@
 ##!usr/bin/python3
-
+#import all the important modules
 from kivy.app import App 
 from kivy.lang import Builder
 from kivy.uix.widget import Widget
@@ -46,67 +46,67 @@ class DcodLayout(Screen):
 				decoded = mybase64.decode(cipher) #button == base64 decode 
 
 			case 'b64e':
-				decoded = mybase64.encode(cipher)
+				decoded = mybase64.encode(cipher)#button == base64 encode 
 
 			case 'rot13':
-				decoded = rot13.rot13(cipher)
+				decoded = rot13.rot13(cipher)#button == ROT13 code 
 
 			case 'rot47':
-				decoded = rot47.rot47(cipher)
+				decoded = rot47.rot47(cipher) #button == ROT47 code 
 
 			case 'b32':
-				decoded = mybase32.decode(cipher)
+				decoded = mybase32.decode(cipher)#button == base32 decode 
 
 			case 'b32e':
-				decoded = mybase32.encode(cipher)
+				decoded = mybase32.encode(cipher)#button == base32  encode 
 			
 			case 't2b':
-				decoded = text2binary.encode(cipher)
+				decoded = text2binary.encode(cipher)#button == binary code for text 
 			
 			case 'b2t' :
-				decoded = binary2text.decode(cipher)
+				decoded = binary2text.decode(cipher)#button =text code to binary 
 
 			case "text2XOR2text":
 				decoded = text2XOR2text.encode(cipher,cipher_key)
 
 			case "hex_encode":
-				decoded = hex_encode.encode(cipher)
+				decoded = hex_encode.encode(cipher)#button == hex encode 
 
 			case "hex_decode":
-				decoded = hex_encode.decode(cipher)
+				decoded = hex_encode.decode(cipher)#button == base64 decode 
 
 			case "morse_encode":
-				decoded = morse.encode(cipher)
+				decoded = morse.encode(cipher)#button == Morse encode 
 
 			case "morse_decode":
-				decoded = morse.decode(cipher)
+				decoded = morse.decode(cipher)#button == Morse decode 
 
 			case "atci":
 				decoded = atbash.decatbash(cipher)
 
 			case "vigenere_encode":
-				decoded = vigenere.encode(cipher, cipher_key)
+				decoded = vigenere.encode(cipher, cipher_key)#button == Vigenere encode 
 
 			case "vigenere_decode":
-				decoded = vigenere.decode(cipher, cipher_key)
+				decoded = vigenere.decode(cipher, cipher_key)#button == Vigenere decode 
 
 			case "octal_encode":
-				decoded = octal.encode(cipher)
+				decoded = octal.encode(cipher)#button == octal encode 
 
 			case "octal_decode":
-				decoded = octal.decode(cipher)
+				decoded = octal.decode(cipher)#button == octal decode 
 
 			case "rot8000_encode":
-				decoded = rot8000.encode(cipher)
+				decoded = rot8000.encode(cipher)#button == ROT8000 encode 
 
 			case "rot8000_decode":
-				decoded = rot8000.decode(cipher)
+				decoded = rot8000.decode(cipher)#button == ROT8000 decode 
 
 			case "base58d":
-				decoded = base58.base58_decode(cipher)
+				decoded = base58.base58_decode(cipher)#button == base58d decode 
 			
 			case "base58e":
-				decoded = base58.base58_encode(cipher)
+				decoded = base58.base58_encode(cipher) #button == base58d encode 
 
 
 		#replace the text in id="string" by the value of the "decoded" variable
@@ -117,7 +117,7 @@ class DcodLayout(Screen):
 
 	def copy(self):
 		try:
-			c2c.copy(decoded)
+			c2c.copy(decoded)# copy to clipboard
 		except:
 			self.ids.string.text = "Nothing to copy!"
 
