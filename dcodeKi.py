@@ -37,53 +37,65 @@ class DcodLayout(Widget):
 				c2c.copy(decoded) #copy to clipboard
 
 			case 'b64e':
-				decoded = mybase64.encode(cipher)
-				c2c.copy(decoded)
+				decoded = mybase64.encode(cipher) #button == base64 encode
+				c2c.copy(decoded) #copy to clipboard
+
 
 			case 'rot13':
-				decoded = rot13.rot13(cipher)
-				c2c.copy(decoded)
+				decoded = rot13.rot13(cipher) #button == ROT13 encoded string
+				c2c.copy(decoded) #copy to clipboard
+
 
 			case 'rot47':
-				decoded = rot47.rot47(cipher)
-				c2c.copy(decoded)
+				decoded = rot47.rot47(cipher) #button == ROT47 encoded string
+				c2c.copy(decoded) #copy to clipboard
+
 
 			case 'b32':
-				decoded = mybase32.decode(cipher)
-				c2c.copy(decoded)
+				decoded = mybase32.decode(cipher) #button == base32 decode
+				c2c.copy(decoded) #copy to clipboard
+
 
 			case 'b32e':
-				decoded = mybase32.encode(cipher)
-				c2c.copy(decoded)
+				decoded = mybase32.encode(cipher) #button == base32 encode
+				c2c.copy(decoded) #copy to clipboard
+
 			
 			case 't2b':
-				decoded = text2binary.encode(cipher)
-				c2c.copy(decoded)
+				decoded = text2binary.encode(cipher) #button == binary code
+				c2c.copy(decoded) #copy to clipboard
+
 			
 			case 'b2t' :
-				decoded = binary2text.decode(cipher)
-				c2c.copy(decoded)
+				decoded = binary2text.decode(cipher) #button == text code
+				c2c.copy(decoded) #copy to clipboard
+
 
 			case "hex_encode":
-				decoded = hex_encode.encode(cipher)
-				c2c.copy(decoded)
+				decoded = hex_encode.encode(cipher)#button == hex code
+				c2c.copy(decoded) #copy to clipboard
+
 
 			case "text2XOR2text":
 				decoded = text2XOR2text.encode(cipher)
 			case "hex_decode":
 				decoded = hex_encode.decode(cipher)
-				c2c.copy(decoded)
+				c2c.copy(decoded) #copy to clipboard
+
 
 			case "morse_encode":
-				decoded = morse.encode(cipher)
-				c2c.copy(decoded)
+				decoded = morse.encode(cipher)#button == text to Morse code
+				c2c.copy(decoded) #copy to clipboard
+
 
 			case "morse_decode":
-				decoded = morse.decode(cipher)
-				c2c.copy(decoded)
+				decoded = morse.decode(cipher)#button == Morse to text code
+				c2c.copy(decoded) #copy to clipboard
+
 			case "atci":
 				decoded = atbash.decatbash(cipher)
-				c2c.copy(decoded)
+				c2c.copy(decoded) #copy to clipboard
+
 
 
 		#replace the text in id="string" by the value of the "decoded" variable
