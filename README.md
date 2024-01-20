@@ -53,6 +53,12 @@ To run the tool in your system (**using terminal**)
    ```(bash)
    python3 dcodeKi.py
    ```
+## Screenshots
+![image](https://github.com/daksh1210jain/dcodeKi/assets/137384322/695c8ec1-cc76-4845-9627-08fe8ce0bf26)
+![image](https://github.com/daksh1210jain/dcodeKi/assets/137384322/f1d86650-5860-4d31-8342-a14ea479a28c)
+![image](https://github.com/daksh1210jain/dcodeKi/assets/137384322/a8d6b496-f500-4698-8721-3b8799b7e8b8)
+
+
 
 
 ## Contribute
