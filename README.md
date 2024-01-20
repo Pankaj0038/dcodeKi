@@ -54,9 +54,15 @@ To run the tool in your system (**using terminal**)
    python3 dcodeKi.py
    ```
 ## Screenshots
+1.  Basic Interface Of Application
 ![image](https://github.com/daksh1210jain/dcodeKi/assets/137384322/695c8ec1-cc76-4845-9627-08fe8ce0bf26)
+2. Implementation of B64 encode
 ![image](https://github.com/daksh1210jain/dcodeKi/assets/137384322/f1d86650-5860-4d31-8342-a14ea479a28c)
+3. The Loading Screen of the page 
 ![image](https://github.com/daksh1210jain/dcodeKi/assets/137384322/a8d6b496-f500-4698-8721-3b8799b7e8b8)
+4. The copy button when clicked copies the output to clipboard
+   ![image](https://github.com/daksh1210jain/dcodeKi/assets/137384322/ec437ea7-66bb-49fe-ae94-16a3ab5083a1)
+
 
 
 
