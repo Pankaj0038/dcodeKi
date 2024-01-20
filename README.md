@@ -26,6 +26,12 @@ Make sure to install all the requirement in your system<br>
    **Framework to create the GUI (Graphical User Interface)**
 3. [Pyperclip](https://pypi.org/project/pyperclip/)<br>
    **Crossplatform module for the copy paste function**
+4. [KivyMd 1.2.0]([https://www.python.org/downloads/](https://kivymd.readthedocs.io/en/latest/getting-started/))<br>
+   **Scripting language which makes your app look more native, stylish and mobile friendly**
+5. Dependency Libraries for encoders<br>
+   **If the encoders (rot47, rot13, mybase64, mybase32, etc.) have external dependencies, make sure those libraries are installed**
+6.KV Language File (dcodeKi.kv)<br>
+   **This file defines the layout and styles for your Kivy application.**
 ## Install & run
 To run the tool in your system (**using terminal**)
 1. First clone the repo
