@@ -1,8 +1,11 @@
-# dcodeKi
-A Python GUI Tool for Encoding and Decoding 
+<p align="center">
+<img src="logo.png" alt="interface" width="100" align="center"/><br>
+<h1 align="center">dcodeKi</h1>
+</p>
+<h3 align="center">A Python GUI Tool for Encoding and Decoding</h3>
+
 ________
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
-
 ## Table of Contents
 - [About](#about)
 - [Requirements](#requirements)
