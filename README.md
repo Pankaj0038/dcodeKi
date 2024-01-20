@@ -28,8 +28,8 @@ Make sure to install all the requirement in your system<br>
    **Crossplatform module for the copy paste function**
 4. [KivyMD][(https://www.python.org/downloads/](https://kivymd.readthedocs.io/en/latest/index.html))<br>
    **A framework for cross-platform, touch-enabled graphical applications**
-5.Code Editor and Terminal
-** Terminal or command prompt will be useful during development for running and testing the application**
+5.Code Editor and Terminal<br>
+**Terminal or command prompt will be useful during development for running and testing the application**
 ## Install & run
 To run the tool in your system (**using terminal**)
 1. First clone the repo
