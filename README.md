@@ -30,7 +30,7 @@ Make sure to install all the requirement in your system<br>
 3. [Pyperclip](https://pypi.org/project/pyperclip/)<br>
    **Crossplatform module for the copy paste function**
 4. [KivyMD](https://kivymd.readthedocs.io/en/latest/index.html)<br>
-   **A framework for cross-platform, touch-enabled graphical applications**<br>
+   **A collection of Material Design compliant widgets for use with kivy**<br>
    
 ## Install & run
 To run the tool in your system (**using terminal**)
