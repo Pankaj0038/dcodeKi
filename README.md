@@ -73,7 +73,7 @@ To run the tool in your system (**using terminal**)
  ### User_friendly nomenclature
   | Description | Image |
   |---|---|
-  | General nameing of the encoders <br> | <img src="https://github.com/daksh1210jain/dcodeKi/assets/137384322/f1d86650-5860-4d31-8342-a14ea479a28c" alt="interface" width="800" style="float:right"/>  |
+  | General naming of the encoders <br> | <img src="https://github.com/daksh1210jain/dcodeKi/assets/137384322/f1d86650-5860-4d31-8342-a14ea479a28c" alt="interface" width="800" style="float:right"/>  |
 
 
 
