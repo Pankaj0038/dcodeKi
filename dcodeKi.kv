@@ -194,6 +194,25 @@
 				height: 50
 				on_press: root.press('base58e')	
 			
+			Button:
+				text: "Reverse"
+				font_size: 20 
+				size_hint: (0.20,None)
+				height: 50
+				on_press: root.press('reverse')	
+			Button:
+				text: "Upper"
+				font_size: 20 
+				size_hint: (0.20,None)
+				height: 50
+				on_press: root.press('upper')
+			Button:
+				text: "Lower"
+				font_size: 20 
+				size_hint: (0.20,None)
+				height: 50
+				on_press: root.press('lower')
+			
 
 		Label:  #Adding Empty Label below buttons for blank space as XOR button was going down into the screen
 			size_hint_x: None

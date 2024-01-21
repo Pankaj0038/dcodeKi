@@ -12,7 +12,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 from kivy.clock import Clock
 
-from encoders import rot47, rot13, mybase64, mybase32, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58
+from encoders import rot47, rot13, mybase64, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58
 from feature import c2c
 
 #load the kv file 
@@ -107,6 +107,15 @@ class DcodLayout(Screen):
 			
 			case "base58e":
 				decoded = base58.base58_encode(cipher) #button == base58d encode 
+			
+			case "upper":
+				decoded = extra.Upper(cipher)
+			
+			case "lower":
+				decoded = extra.Lower(cipher)
+			
+			case "reverse":
+				decoded = extra.Reverse(cipher)
 
 
 		#replace the text in id="string" by the value of the "decoded" variable
