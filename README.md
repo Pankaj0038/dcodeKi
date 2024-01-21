@@ -63,7 +63,7 @@ To run the tool in your system (**using terminal**)
   ### Interface
   | Description | Image |
   |---|---|
-  | Basic interface of [dcodeKi](https://github.com/Pankaj0038/dcodeKi) <br>  User_friendly Interface   | <img src="https://github.com/daksh1210jain/dcodeKi/assets/137384322/695c8ec1-cc76-4845-9627-08fe8ce0bf26" alt="interface" width="800" style="float:right"/> |
+  | User_friendly Interface   | <img src="https://github.com/daksh1210jain/dcodeKi/assets/137384322/695c8ec1-cc76-4845-9627-08fe8ce0bf26" alt="interface" width="800" style="float:right"/> |
   
  ### Features
   | Image | Description |
