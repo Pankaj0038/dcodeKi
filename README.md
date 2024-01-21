@@ -59,21 +59,21 @@ To run the tool in your system (**using terminal**)
   ### Stylish loading screen
   | Image | Description |
   |---|---|
-  | <img src="https://github.com/daksh1210jain/dcodeKi/assets/137384322/a8d6b496-f500-4698-8721-3b8799b7e8b8" alt="interface" width="800" style="float:right"/>| Stylish loading screen |
+  | <img src="screenshots/UI.png" alt="interface" width="800" style="float:right"/>| Stylish loading screen |
   ### Interface
   | Description | Image |
   |---|---|
-  | User_friendly Interface   | <img src="https://github.com/daksh1210jain/dcodeKi/assets/137384322/695c8ec1-cc76-4845-9627-08fe8ce0bf26" alt="interface" width="800" style="float:right"/> |
+  | User_friendly Interface   | <img src="screenshots/INPUT.png" alt="interface" width="800" style="float:right"/> |
   
  ### Features
   | Image | Description |
   |---|---|
-  | <img src="https://github.com/daksh1210jain/dcodeKi/assets/137384322/695c8ec1-cc76-4845-9627-08fe8ce0bf26" alt="interface" width="800" style="float:right"/> | Copy button <br>  Multiple algorithms  |
+  | <img src="screenshots/SEARCH.png" width="800" style="float:right"/> | Copy button <br>  Multiple algorithms  |
 
  ### User_friendly nomenclature
   | Description | Image |
   |---|---|
-  | General naming of the encoders <br> | <img src="https://github.com/daksh1210jain/dcodeKi/assets/137384322/f1d86650-5860-4d31-8342-a14ea479a28c" alt="interface" width="800" style="float:right"/>  |
+  | General naming of the encoders <br> | <img src="screenshots/BUTTON.png" alt="interface" width="800" style="float:right"/>  |
 
 
 
