@@ -131,8 +131,14 @@ class DcodLayout(Screen):
 			self.ids.string.text = "Nothing to copy!"
 
 #App building
+from kivy.lang import Builder
+from kivy.clock import Clock
+from kivy.uix.screenmanager import ScreenManager
+from kivymd.app import MDApp
+
 class DcodeKiApp(MDApp):
     def build(self):
+        self.icon = "logo.png"
         sm = ScreenManager()
         sm.add_widget(Builder.load_file("splash.kv"))
         sm.add_widget(DcodLayout(name='main'))
@@ -145,7 +151,7 @@ class DcodeKiApp(MDApp):
     def show_main_screen(self, dt):
         sm = self.root
         sm.current = 'main'
-	
-#If executes this file then run the program 
+
+# If executing this file, then run the program
 if __name__ == '__main__':
 	DcodeKiApp().run()
