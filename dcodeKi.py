@@ -12,7 +12,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 from kivy.clock import Clock
 
-from encoders import rot47, rot13, mybase64, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58
+from encoders import rot47, rot13, mybase64, base45, base62, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58
 from feature import c2c
 
 #load the kv file 
@@ -47,6 +47,18 @@ class DcodLayout(Screen):
 
 			case 'b64e':
 				decoded = mybase64.encode(cipher)#button == base64 encode 
+				
+			case 'b45':
+				decoded = base45.decode(cipher)#button == base45 decode 
+
+			case 'b45e':
+				decoded = base45.encode(cipher)#button == base45 encode
+				
+			case 'b62':
+				decoded = base62.decode(cipher) #button == base62 decode 
+
+			case 'b62e':
+				decoded = base62.encode(cipher)#button == base62 encode
 
 			case 'rot13':
 				decoded = rot13.rot13(cipher)#button == ROT13 code 
