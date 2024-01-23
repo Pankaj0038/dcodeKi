@@ -15,7 +15,7 @@ ________
 ## About
 [dcodeKi](https://github.com/Pankaj0038/dcodeKi) is a Python GUI based encoder-decoder tool using Kivy framework<p>
 **Features**
-- Auto copy to clipboard (everytime after encoding or decoding it automatically copy the ouput to clipboard)
+- Copy to clipboard
 - GUI
 - Numerous Encoder-decoders
 
