@@ -43,13 +43,37 @@
 						size_hint: (0.20,None)
 						height: 50
 						on_press: root.press('b64e')
+                                        ActionButton:
+						text: "B45 dcode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('b45')
+                                        ActionButton:
+						text: "B45 ecode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('b45e')
+                                        ActionButton:
+						text: "B62 dcode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('b64')
+                                        ActionButton:
+						text: "B62 ecode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('b62e')
 					ActionButton:
 						text: "ROT13"
 						font_size: 20
 						size_hint: (0.20,None)
 						height: 50
 						on_press: root.press('rot13')
-					ActionButton:
+				         ActionButton:
 						text: "ROT47"
 						font_size: 20
 						size_hint: (0.20,None)
@@ -251,6 +275,58 @@
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('b64e')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
+                                Button:
+					text: "B45 dcode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('b45')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
+                                Button:
+					text: "B45 ecode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('b45e')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
+                                Button:
+					text: "B62 dcode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('b62')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
+                                Button:
+					text: "B62 ecode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('b62e')
 					canvas.before:
 						Color:
 							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
