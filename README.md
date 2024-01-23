@@ -1,5 +1,5 @@
 <p align="center">
-<img src="logo.png" alt="interface" width="100" align="center"/><br>
+<img src="./dcodeKi-app/logo.png" alt="interface" width="100" align="center"/><br>
 <h1 align="center">dcodeKi</h1>
 </p>
 <h3 align="center">A Python GUI Tool for Encoding and Decoding</h3>
@@ -59,21 +59,21 @@ To run the tool in your system (**using terminal**)
   ### Stylish loading screen
   | Image | Description |
   |---|---|
-  | <img src="screenshots/UI.png" alt="interface" width="800" style="float:right"/>| Stylish loading screen |
+  | <img src="./dcodeKi-app/screenshots/UI.png" alt="interface" width="800" style="float:right"/>| Stylish loading screen |
   ### Interface
   | Description | Image |
   |---|---|
-  | User_friendly Interface   | <img src="screenshots/INPUT.png" alt="interface" width="800" style="float:right"/> |
+  | User_friendly Interface   | <img src="./dcodeKi-app/screenshots/INPUT.png" alt="interface" width="800" style="float:right"/> |
   
  ### Features
   | Image | Description |
   |---|---|
-  | <img src="screenshots/SEARCH.png" width="800" style="float:right"/> | Copy button <br>  Multiple algorithms  |
+  | <img src="./dcodeKi-app/screenshots/SEARCH.png" width="800" style="float:right"/> | Copy button <br>  Multiple algorithms  |
 
  ### User_friendly nomenclature
   | Description | Image |
   |---|---|
-  | General naming of the encoders <br> | <img src="screenshots/BUTTON.png" alt="interface" width="800" style="float:right"/>  |
+  | General naming of the encoders <br> | <img src="./dcodeKi-app/screenshots/BUTTON.png" alt="interface" width="800" style="float:right"/>  |
 
 
 
