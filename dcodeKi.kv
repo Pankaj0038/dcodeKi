@@ -1,25 +1,192 @@
 # Globally set the size of the label text
 <Label>
-	font_size:28
+	font_size:20
 
 # Overall layout
 <DcodLayout>
 	cipher:cipher
 	cipher_key:cipher_key
+		# Kivy vertical menu bar
+
 	BoxLayout:
 		orientation: 'vertical'
 		size: root.width,root.height
 		spacing: 20
 		padding: 10
-
 		# Set the background color
-        canvas.before:
-            Color:
-                rgba: 0.2, 0.2, 0.2, 1
-            Rectangle:
-                pos: self.pos
-                size: self.size
-		
+		canvas.before:
+			Color:
+				rgba: 0.2, 0.2, 0.2, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+		ActionBar:
+			pos_hint: {'top': 1}
+			ActionView:
+				use_separator: True
+				ActionPrevious:
+					title: "dcodeKi"
+					with_previous: False
+				ActionGroup:
+					text: "algorithmic cipher"
+					mode: 'spinner'
+					ActionButton:
+						text: "B64 dcode"
+						font_size: 20
+						pos_hint: {'center_x':0}
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('b64') # On button press send the value 'b64' for base64 decode
+					ActionButton:
+						text: "B64 ecode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('b64e')
+					ActionButton:
+						text: "ROT13"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('rot13')
+					ActionButton:
+						text: "ROT47"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('rot47')
+					ActionButton:
+						text: "B32 dcode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('b32')
+					ActionButton:
+						text: "B32 ecode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('b32e')
+					ActionButton:
+						text: "Binary Encode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('t2b')
+					ActionButton:
+						text: "Binary Decode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('b2t')
+					ActionButton:
+						text: "Hex Encode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('hex_encode')
+					ActionButton:
+						text: "Hex Decode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('hex_decode')
+					ActionButton:
+						text: "XOR Encode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('text2XOR2text')
+					ActionButton:
+						text: "Morse Encode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('morse_encode')
+					ActionButton:
+						text: "Morse Decode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('morse_decode')
+					ActionButton:
+						text: "Vigenere Encode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('vigenere_encode')
+					ActionButton:
+						text: "Vigenere Decode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('vigenere_decode')
+					ActionButton:
+						text: "Atbash Cipher"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('atci')
+					ActionButton:
+						text: "Octal Encode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('octal_encode')
+					ActionButton:
+						text: "Octal Decode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('octal_decode')
+					ActionButton:
+						text: "ROT8000 Encode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('rot8000_encode')
+					ActionButton:
+						text: "ROT8000 Decode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('rot8000_decode')
+					ActionButton:
+						text: "Base58 Decode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('base58d')	
+					ActionButton:
+						text: "Base58 Encode"
+						font_size: 20
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('base58e')	
+					
+					ActionButton:
+						text: "Reverse"
+						font_size: 20 
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('reverse')	
+					ActionButton:
+						text: "Upper"
+						font_size: 20 
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('upper')
+					ActionButton:
+						text: "Lower"
+						font_size: 20 
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('lower')
+				ActionGroup:
+					text: "symbol cipher"
+					mode: 'spinner'
+					ActionButton:
+						text: "coming soon"
 		# Heading
 		Label:
 			id: string2
@@ -42,7 +209,7 @@
 		# Input field
 		TextInput:
 			font_name: "fonts/ArialUnicodeMS.ttf"
-		    hint_text: "Enter Input: "
+			hint_text: "Enter Input: "
 			foreground_color: 0, 0, 1, 1
 			id: cipher
 			font_size:25
@@ -51,169 +218,169 @@
 		# Input field
 		TextInput:
 			font_name: "fonts/ArialUnicodeMS.ttf"
-		    hint_text: "Enter Key: "
+			hint_text: "Enter Key: "
 			foreground_color: 1, 0, 0, 1
 			id: cipher_key
 			font_size:25
 			multiline: False
 
 		# Grid layout for the button (within the box layout)
-		GridLayout:
-			cols: 5
-			Button:
-				text: "B64 dcode"
-				font_size: 20
-				pos_hint: {'center_x':0}
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('b64') # On button press send the value 'b64' for base64 decode
-			Button:
-				text: "B64 ecode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('b64e')
-			Button:
-				text: "ROT13"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('rot13')
-			Button:
-				text: "ROT47"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('rot47')
-			Button:
-				text: "B32 dcode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('b32')
-			Button:
-				text: "B32 ecode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('b32e')
-			Button:
-				text: "Binary Encode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('t2b')
-			Button:
-				text: "Binary Decode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('b2t')
-			Button:
-				text: "Hex Encode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('hex_encode')
-			Button:
-				text: "Hex Decode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('hex_decode')
-			Button:
-				text: "XOR Encode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('text2XOR2text')
-			Button:
-				text: "Morse Encode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('morse_encode')
-			Button:
-				text: "Morse Decode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('morse_decode')
-			Button:
-				text: "Vigenere Encode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('vigenere_encode')
-			Button:
-				text: "Vigenere Decode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('vigenere_decode')
-			Button:
-				text: "Atbash Cipher"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('atci')
-			Button:
-				text: "Octal Encode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('octal_encode')
-			Button:
-				text: "Octal Decode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('octal_decode')
-			Button:
-				text: "ROT8000 Encode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('rot8000_encode')
-			Button:
-				text: "ROT8000 Decode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('rot8000_decode')
-			Button:
-				text: "Base58 Decode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('base58d')	
-			Button:
-				text: "Base58 Encode"
-				font_size: 20
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('base58e')	
-			
-			Button:
-				text: "Reverse"
-				font_size: 20 
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('reverse')	
-			Button:
-				text: "Upper"
-				font_size: 20 
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('upper')
-			Button:
-				text: "Lower"
-				font_size: 20 
-				size_hint: (0.20,None)
-				height: 50
-				on_press: root.press('lower')
-			
-
-		Label:  #Adding Empty Label below buttons for blank space as XOR button was going down into the screen
-			size_hint_x: None
-			widtht: '200dp'
+		ScrollView:
+			size_hint: (1, 3)
+			GridLayout:
+				size_hint_y: None
+				height: self.minimum_height
+				cols: 5
+				Button:
+					text: "B64 dcode"
+					font_size: 20
+					pos_hint: {'center_x':0}
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('b64') # On button press send the value 'b64' for base64 decode
+				Button:
+					text: "B64 ecode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('b64e')
+				Button:
+					text: "ROT13"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('rot13')
+				Button:
+					text: "ROT47"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('rot47')
+				Button:
+					text: "B32 dcode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('b32')
+				Button:
+					text: "B32 ecode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('b32e')
+				Button:
+					text: "Binary Encode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('t2b')
+				Button:
+					text: "Binary Decode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('b2t')
+				Button:
+					text: "Hex Encode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('hex_encode')
+				Button:
+					text: "Hex Decode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('hex_decode')
+				Button:
+					text: "XOR Encode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('text2XOR2text')
+				Button:
+					text: "Morse Encode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('morse_encode')
+				Button:
+					text: "Morse Decode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('morse_decode')
+				Button:
+					text: "Vigenere Encode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('vigenere_encode')
+				Button:
+					text: "Vigenere Decode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('vigenere_decode')
+				Button:
+					text: "Atbash Cipher"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('atci')
+				Button:
+					text: "Octal Encode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('octal_encode')
+				Button:
+					text: "Octal Decode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('octal_decode')
+				Button:
+					text: "ROT8000 Encode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('rot8000_encode')
+				Button:
+					text: "ROT8000 Decode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('rot8000_decode')
+				Button:
+					text: "Base58 Decode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('base58d')	
+				Button:
+					text: "Base58 Encode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('base58e')	
+				
+				Button:
+					text: "Reverse"
+					font_size: 20 
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('reverse')	
+				Button:
+					text: "Upper"
+					font_size: 20 
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('upper')
+				Button:
+					text: "Lower"
+					font_size: 20 
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('lower')
+		
