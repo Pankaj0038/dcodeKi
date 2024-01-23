@@ -13,13 +13,13 @@
 		size: root.width,root.height
 		spacing: 20
 		padding: 10
+
 		# Set the background color
-		canvas.before:
-			Color:
-				rgba: 0.2, 0.2, 0.2, 1
-			Rectangle:
-				pos: self.pos
-				size: self.size
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'wp2691479.webp'
 		ActionBar:
 			pos_hint: {'top': 1}
 			ActionView:
@@ -209,7 +209,7 @@
 		# Input field
 		TextInput:
 			font_name: "fonts/ArialUnicodeMS.ttf"
-			hint_text: "Enter Input: "
+		    hint_text: "Enter Input: "
 			foreground_color: 0, 0, 1, 1
 			id: cipher
 			font_size:25
@@ -218,7 +218,7 @@
 		# Input field
 		TextInput:
 			font_name: "fonts/ArialUnicodeMS.ttf"
-			hint_text: "Enter Key: "
+		    hint_text: "Enter Key: "
 			foreground_color: 1, 0, 0, 1
 			id: cipher_key
 			font_size:25
@@ -237,133 +237,287 @@
 					pos_hint: {'center_x':0}
 					size_hint: (0.20,None)
 					height: 50
-					on_press: root.press('b64') # On button press send the value 'b64' for base64 decode
+					on_press: root.press('b64')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "B64 ecode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('b64e')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "ROT13"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('rot13')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "ROT47"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('rot47')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "B32 dcode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('b32')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "B32 ecode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('b32e')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "Binary Encode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('t2b')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "Binary Decode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('b2t')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "Hex Encode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('hex_encode')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "Hex Decode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('hex_decode')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "XOR Encode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('text2XOR2text')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "Morse Encode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('morse_encode')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "Morse Decode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('morse_decode')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "Vigenere Encode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('vigenere_encode')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "Vigenere Decode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('vigenere_decode')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "Atbash Cipher"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('atci')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "Octal Encode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('octal_encode')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "Octal Decode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('octal_decode')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "ROT8000 Encode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('rot8000_encode')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "ROT8000 Decode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('rot8000_decode')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "Base58 Decode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
-					on_press: root.press('base58d')	
+					on_press: root.press('base58d')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "Base58 Encode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('base58e')	
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				
 				Button:
 					text: "Reverse"
@@ -371,16 +525,36 @@
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('reverse')	
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "Upper"
 					font_size: 20 
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('upper')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
 				Button:
 					text: "Lower"
 					font_size: 20 
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('lower')
-		
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
