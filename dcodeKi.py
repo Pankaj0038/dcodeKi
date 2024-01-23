@@ -3,6 +3,7 @@
 from kivy.app import App 
 from kivy.lang import Builder
 from kivy.uix.widget import Widget
+from kivy.uix.image import AsyncImage
 from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout 
 from kivy.uix.button import Button 
