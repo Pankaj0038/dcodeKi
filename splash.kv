@@ -12,12 +12,10 @@ MDScreen:
         size_hint: 0.9, 0.9
         pos_hint: {'center_x': 0.5,'center_y': 0.6}
 
-    MDLabel:
-        text: "Encode your thoughts, decode your world"
-        pos_hint: {'center_x': 0.5, 'center_y': 0.10}
-        halign: 'center'
-        theme_text_color: 'Custom'
-        text_color: 1, 0, 0, 1
-        font_size: "20sp"
-        font_name: "fonts\Anton-Regular.ttf"
-        on_texture_size: app.animate_text(self)
+    AsyncImage:
+        source: 'z5EsuzqT_V1.gif'
+        pos: 0, 0
+        allow_stretch: True
+        keep_ratio:False
+        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+        size_hint: (0.3, 0.3)
