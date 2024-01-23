@@ -3,6 +3,7 @@
 from kivy.app import App 
 from kivy.lang import Builder
 from kivy.uix.widget import Widget
+from kivy.animation import Animation
 from kivy.uix.image import AsyncImage
 from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout 
@@ -18,7 +19,7 @@ from feature import c2c
 
 #load the kv file 
 Builder.load_file('dcodeKi.kv')
-
+kv_string = ''
 class DcodLayout(Screen):
 
 	#create an object property to store the input
@@ -144,6 +145,14 @@ class DcodeKiApp(MDApp):
         sm.add_widget(Builder.load_file("splash.kv"))
         sm.add_widget(DcodLayout(name='main'))
         return sm
+    def build1(self):
+        self.root = Builder.load_string(kv_string)
+        return self.root
+
+    def animate_text(self, label):
+        anim = Animation(y=label.center_y + 10, duration=0.5) + Animation(y=label.center_y - 10, duration=0.5)
+        anim.repeat = True
+        anim.start(label)
 
     def on_start(self):
         # Schedule the transition to the main screen after 5 seconds
