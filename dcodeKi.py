@@ -19,7 +19,6 @@ from feature import c2c
 
 #load the kv file 
 Builder.load_file('dcodeKi.kv')
-kv_string = ''
 class DcodLayout(Screen):
 
 	#create an object property to store the input
