@@ -1,17 +1,12 @@
 MDScreen:
     name: "splash"
-    MDFloatLayout:
-        md_bg_color: 0.2, 0.2, 0.2, 1
-        Image:
-            source: "logo.png"
-            size_hint: 0.9, 0.9
-            pos_hint: {'center_x': 0.5,'center_y': 0.6}
-
-        MDLabel:
-            text: "Encode your thoughts, decode your world"
-            pos_hint: {'center_x': 0.5, 'center_y': 0.10}
-            halign: 'center'
-            theme_text_color: 'Custom'
-            text_color: 1,1,1,1
-            font_size: "20sp"
-            font_name: "fonts/SpaceGrotesk-Bold.ttf"
+    AsyncImage:
+        source: 'ec.gif'
+        anim_delay: 1/10  # Set the delay based on the frame rate of your GIF
+        allow_stretch: True
+        keep_ratio: False
+        size_hint: (1, 1)
+    Image:
+        source: "logo.png"
+        size_hint: 0.9, 0.9
+        pos_hint: {'center_x': 0.5, 'center_y': 0.6}
