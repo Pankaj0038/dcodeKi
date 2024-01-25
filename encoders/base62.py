@@ -26,11 +26,6 @@ class Base62:
 
         return num
 
-# Example usage
-original_number = 123456789
-encoded_data = Base62.encode(original_number)
-decoded_number = Base62.decode(encoded_data)
-
 print("Original Number:", original_number)
 print("Encoded Data:", encoded_data)
 print("Decoded Number:", decoded_number)
