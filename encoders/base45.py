@@ -31,11 +31,6 @@ class Base45:
 
         return bytes(result)
 
-# Example usage
-original_data = "Hello, World!"
-encoded_data = Base45.encode(original_data.encode())
-decoded_data = Base45.decode(encoded_data)
-
 print("Original Data:", original_data)
 print("Encoded Data:", encoded_data)
 print("Decoded Data:", decoded_data.decode())
