@@ -42,7 +42,7 @@ To run the tool in your system (**using terminal**)
    You can just download the zip file of the repository<br>
 3. Change directory to dcodeKi
    ```(bash)
-   cd dcodeKi-main
+   cd dcodeKi-main/dcodeKi-app
    ```
 4. Download all the requirement (Skip this if already downloaded)
    ```(bash)
