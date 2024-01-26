@@ -1,13 +1,8 @@
 ##!usr/bin/python3
 #import all the important modules
-from kivy.app import App 
 from kivy.lang import Builder
-from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
-from kivy.uix.boxlayout import BoxLayout 
-from kivy.uix.button import Button 
 from kivymd.app import MDApp
-
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 from kivy.clock import Clock
@@ -19,7 +14,7 @@ from feature import c2c
 Builder.load_file('dcodeKi.kv')
 
 # Setting up the window size and position
-Window.size = (850, 850)
+Window.size = (850, 930)
 Window.top = 100
 
 class DcodLayout(Screen):
@@ -146,11 +141,6 @@ class DcodLayout(Screen):
 		except:
 			self.ids.string.text = "Nothing to copy!"
 
-#App building
-from kivy.lang import Builder
-from kivy.clock import Clock
-from kivy.uix.screenmanager import ScreenManager
-from kivymd.app import MDApp
 
 class DcodeKiApp(MDApp):
     def build(self):
