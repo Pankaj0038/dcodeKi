@@ -18,6 +18,10 @@ from feature import c2c
 #load the kv file 
 Builder.load_file('dcodeKi.kv')
 
+# Setting up the window size and position
+Window.size = (850, 850)
+Window.top = 100
+
 class DcodLayout(Screen):
 
 	#create an object property to store the input
