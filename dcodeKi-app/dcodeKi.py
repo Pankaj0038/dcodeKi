@@ -12,7 +12,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 from kivy.clock import Clock
 
-from encoders import rot47, rot13, mybase64, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58
+from encoders import rot47, rot13, mybase64, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58, mybase45, mybase62
 from feature import c2c
 
 #load the kv file 
@@ -42,6 +42,18 @@ class DcodLayout(Screen):
 		
 		#match case for multiple encoders/decoders (match the button (which is pressed) and apply function according to it)
 		match method:
+			case 'b45':
+				decoded = mybase45.decode(cipher) #button == mybase45 decode
+			
+			case 'b45e':
+				decoded = mybase45.encode(cipher) #button == mybase45 encode
+			
+			case 'b62':
+				decoded = mybase62.decode(cipher) #button == mybase62 decode
+			
+			case 'b62e':
+				decoded = mybase62.encode(cipher)
+			
 			case 'b64':
 				decoded = mybase64.decode(cipher) #button == base64 decode 
 
