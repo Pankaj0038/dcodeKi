@@ -40,12 +40,12 @@ def decode(to_decode):
 	return bytes(res).decode()
 
 
-# if __name__ == "__main__":
-# 	usr_input = input("Enter a string to encode or decode: ")
-# 	op = input("Do you want to encode it or decode (e/d): ")
-# 	if op == "e":
-# 		print(encode(usr_input))
-# 	elif op == "d":
-# 		print(decode(usr_input))
-# 	else:
-# 		print("Invalid Option!")
+if __name__ == "__main__":
+	usr_input = input("Enter a string to encode or decode: ")
+	op = input("Do you want to encode it or decode (e/d): ")
+	if op == "e":
+		print(encode(usr_input))
+	elif op == "d":
+		print(decode(usr_input))
+	else:
+		print("Invalid Option!")
