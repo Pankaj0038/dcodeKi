@@ -49,23 +49,23 @@ def from_base62(s):
 
 
 
-if __name__ == "__main__":
-    test_data = [
-        "Hello World", 
-        "base-62",
-    ]
+# if __name__ == "__main__":
+#     test_data = [
+#         "Hello World", 
+#         "base-62",
+#     ]
     
-    for data in test_data:
-        if decode(encode(data)) != data:
-            print("Error for data:", data)
-    else:
-        print("All tests passed!!")
+#     for data in test_data:
+#         if decode(encode(data)) != data:
+#             print("Error for data:", data)
+#     else:
+#         print("All tests passed!!")
 
-    usr_input = input("Enter the string to be encoded/decoded: ")
-    op = input("Enter 'e' for encode and 'd' for decode: ")
-    if op == "e":
-        print(encode(usr_input))
-    elif op == "d":
-        print(decode(usr_input))
-    else:
-        print("Invalid option")
+#     usr_input = input("Enter the string to be encoded/decoded: ")
+#     op = input("Enter 'e' for encode and 'd' for decode: ")
+#     if op == "e":
+#         print(encode(usr_input))
+#     elif op == "d":
+#         print(decode(usr_input))
+#     else:
+#         print("Invalid option")
