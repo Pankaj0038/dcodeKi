@@ -2,7 +2,7 @@ BASE45_CHARSET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:"
 BASE45_DICT = {v: i for i, v in enumerate(BASE45_CHARSET)}
 
 
-def encode(to_encode: str) -> bytes:
+def encode(to_encode: str) -> str:
     to_encode = to_encode.encode()
     res = ""
 
@@ -18,7 +18,7 @@ def encode(to_encode: str) -> bytes:
     return res
 
 
-def decode(to_decode) -> bytes:
+def decode(to_decode) -> str:
     try:
         if isinstance(to_decode, str):
             to_decode = [BASE45_DICT[c] for c in to_decode.rstrip("\n")]
