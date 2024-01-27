@@ -12,7 +12,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 from kivy.clock import Clock
 
-from encoders import rot47, rot13, mybase64, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere,xor_brute_force, base58
+from encoders import rot47, rot13, mybase64, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere,xor_brute_force,rot13_brute_force,base58
 from feature import c2c
 
 #load the kv file 
@@ -116,14 +116,12 @@ class DcodLayout(Screen):
 			
 			case "reverse":
 				decoded = extra.Reverse(cipher)
-            
-            case "xor_brute_force":
-                decoded_results = xor_brute_force(cipher) 
-                decoded = "\n".join(f"Key {key}: {result}" for key, result in decoded_results)
+			case "xor_brute":
+				decoded = xor_brute_force.xor_brute_force(cipher)#button==Xor_Brute_Force
+			case "rot13_brute":
+				decoded=rot13_brute_force.rot13_brute_force(cipher)#button==Rot13_Brute_Force
                 
-            case "rot13_brute_force":
-                decoded_results = rot13_brute_force(cipher)
-                decoded = "\n".join(f"Shift {shift}: {result}" for shift, result in decoded_results)
+                
 
 
 
@@ -141,10 +139,10 @@ class DcodLayout(Screen):
 			self.ids.string.text = "Nothing to copy!"
 
 #App building
-from kivy.lang import Builder
+# from kivy.lang import Builder
 from kivy.clock import Clock
 from kivy.uix.screenmanager import ScreenManager
-from kivymd.app import MDApp
+# from kivymd.app import MDApp
 
 class DcodeKiApp(MDApp):
     def build(self):

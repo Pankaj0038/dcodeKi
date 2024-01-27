@@ -1,9 +1,13 @@
-from encoders.rot13 import rot13
+def custom_rot13(char, shift):
+    if char.isalpha():
+        start = ord('a') if char.islower() else ord('A')
+        return chr((ord(char) - start + shift) % 26 + start)
+    return char
 
 def rot13_brute_force(text):
     results = []
     for shift in range(1, 26):
-        decoded = rot13(text)  # Corrected function call
+        decoded = "".join([custom_rot13(char, shift) for char in text])
         results.append((shift, decoded))
     return results
 
