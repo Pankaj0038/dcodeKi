@@ -1,3 +1,4 @@
 kivy[full]
 kivyMD
 pyperclip
+urllib

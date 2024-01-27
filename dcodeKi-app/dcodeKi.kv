@@ -92,6 +92,18 @@
 						height: 50
 						on_press: root.press('hex_decode')
 					ActionButton:
+						text: "URL Encode"
+						font_size: 20 
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('url_encode')
+					ActionButton:
+						text: "URL Decode"
+						font_size: 20 
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('url_decode')
+					ActionButton:
 						text: "XOR Encode"
 						font_size: 20
 						size_hint: (0.20,None)
@@ -352,11 +364,37 @@
 							size: self.size
 							radius: [10, 10, 10, 10]
 				Button:
+					text: "URL Encode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('url_encode')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
+				Button:
 					text: "Hex Decode"
 					font_size: 20
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('hex_decode')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
+				Button:
+					text: "URL Decode"
+					font_size: 20
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('url_decode')
 					canvas.before:
 						Color:
 							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed

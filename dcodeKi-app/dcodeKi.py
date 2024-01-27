@@ -1,5 +1,6 @@
 ##!usr/bin/python3
 #import all the important modules
+
 from kivy.app import App 
 from kivy.lang import Builder
 from kivy.uix.widget import Widget
@@ -12,7 +13,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 from kivy.clock import Clock
 
-from encoders import rot47, rot13, mybase64, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58
+from encoders import rot47, rot13, mybase64, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58, url_encode
 from feature import c2c
 
 #load the kv file 
@@ -70,10 +71,16 @@ class DcodLayout(Screen):
 				decoded = text2XOR2text.encode(cipher,cipher_key)
 
 			case "hex_encode":
-				decoded = hex_encode.encode(cipher)#button == hex encode 
+				decoded = hex_encode.encode(cipher)#button == hex encode
+
+			case "url_encode":
+				decoded = url_encode.encode(cipher)#button == url encode
 
 			case "hex_decode":
-				decoded = hex_encode.decode(cipher)#button == base64 decode 
+				decoded = hex_encode.decode(cipher)#button == base64 decode
+
+			case "url_decode":
+				decoded = url_encode.decode(cipher)#button == url encode 
 
 			case "morse_encode":
 				decoded = morse.encode(cipher)#button == Morse encode 
