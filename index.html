@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DcodeKi</title>
-</head>
-<body>
-    <link rel="stylesheet" href="style.css">
-    <div class="nav-bar">
+    <link rel="icon" type="image/x-icon" href="./dcodeKi-app/logo.png" />
+  </head>
+  <body>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <div class="nav-bar">
         <nav>
             <img class="logo" src="./dcodeKi-app/logo.png" alt="align box" width="50" height="50">
             <a href="#">Contact</a>
@@ -16,10 +17,88 @@
             <a href="#">Download</a>
             <a href="index.html">About</a>
         </nav>
+    </div> -->
+    <header class="nav-bar">
+      <nav>
+        <div class="logo-container">
+          <a href="./index.html"
+            ><img
+              class="logo"
+              src="./dcodeKi-app/logo.png"
+              alt="align box"
+              width="50"
+              height="50"
+          /></a>
+        </div>
+        <div class="navigation-items" id="navigation-items">
+          <a href="./index.html">About</a>
+          <a href="./Components/downloads/download.html" target="_blank">Downloads</a>
+          <a href="./Components/contributers/contributers.html" target="_blank">Contributors</a>
+          <a href="./Components/conatact_page/contact.html" target="_blank"
+            >ContactUs</a
+          >
+        </div>
+        <div class="hamburger">
+          <span id="openHam">&#9776;</span>
+          <span id="closeHam">&#x2716;</span>
+        </div>
+      </nav>
+    </header>
+    <div class="heroContainer">
+        <div class="hero-left">
+      <h3>What is DcodeKi ?</h3>
+      <p>
+        DcodeKi is a encoder decoder tool written in python and made with kivy
+        framework (to create Graphical User Interface) and KivyMD (for icons).
+      </p>
+      <button class="btn-join">Join DcodeKi &nbsp; &rarr;</button>
     </div>
-    <div>
-        <h3>What is DcodeKi ?</h3>
-        DcodeKi is a encoder decoder tool written in python and made with kivy framework (to create Graphical User Interface) and KivyMD (for icons).
+    <div class="hero-right">
+        <img src="./dcodeKi-app/ec.gif" alt="">
     </div>
+</div>
+    <footer class="footer">
+      </div>
+      <ul class="social-icon">
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+      </ul>
+    <p>&copy;2024 Pankaj Barman | All Rights Reserved</p>
+    </footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+  </body>
+  <script>
+    let openHam = document.querySelector("#openHam");
+    let closeHam = document.querySelector("#closeHam");
+    let navigationItems = document.querySelector("#navigation-items");
 
-</body>
+    const hamburgerEvent = (navigation, close, open) => {
+      navigationItems.style.display = navigation;
+      closeHam.style.display = close;
+      openHam.style.display = open;
+    };
+
+    openHam.addEventListener("click", () =>
+      hamburgerEvent("flex", "block", "none")
+    );
+    closeHam.addEventListener("click", () =>
+      hamburgerEvent("none", "none", "block")
+    );
+  </script>
+</html>

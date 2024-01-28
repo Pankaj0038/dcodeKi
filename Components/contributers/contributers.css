@@ -1,0 +1,112 @@
+.contributors {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("/dcodeKi-app/wp2691479.webp");
+    background-repeat: no repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50% 50%;
+    width: 100%;
+    height: 100vh;
+}
+
+.contributors h1{
+    text-align: center;
+    color: rgb(169, 173, 175);
+    font-weight: 600;
+    font-size: 4.5rem;
+    margin-top: 10px;
+    margin-bottom: 4%;
+    transition: color 0.3s ease-in-out;
+}
+.contributors h2{
+    text-align: center;
+    color: rgb(169, 173, 175);
+    font-weight: 500;
+    font-size: 3.5rem;
+    margin-top: 35px;
+    margin-bottom: 25px;
+    transition: color 0.3s ease-in-out;
+}
+
+.contributors h1:hover, .contributors h2:hover {
+    cursor: pointer;
+    color: rgb(182, 220, 236);
+}
+
+#contributor {
+    margin: 0;
+    padding: 0 25px;
+    line-height: 10;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 30vh;
+}
+
+.contributor-card {
+    width: 95px;
+    height: 95px;
+    clip-path: circle(40%);
+    margin: 5px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.contributor-card:hover {
+    transform: scale(1.35);
+    opacity: 0.85;
+}
+
+.contributor-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contributor-card:nth-child(4n+1),
+.contributor-card:nth-child(4n+3) {
+    margin-top: -4px;
+}
+
+.admin{
+    width: 80%;
+    height: 60vh;
+    color: white;
+    border: 1px solid rgba(176, 218, 225, 0.571);
+    background-color: rgba(72, 83, 85, 0.603);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    gap: 18px;
+    padding: 10px;
+    /* overflow: auto; */
+}
+
+.admin h1{
+    font-size: 58px;
+}
+.admin h3{
+    font-size: 36px;
+}
+.admin p{
+    font-size: 26px;
+    padding: 14px;
+
+}
+.info-details li{
+    list-style-type: none;
+    font-size: 24px;
+    padding: 4px 15px;
+}
+.info-details li a{
+    text-decoration: none;
+    color: rgb(225, 225, 215);
+
+}
