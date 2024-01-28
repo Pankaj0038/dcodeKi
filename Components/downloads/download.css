@@ -1,0 +1,78 @@
+.card-container-heading{
+    color: rgb(207, 249, 225);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+    padding: 6px;
+    margin-top: 60px;
+}
+/* .encoders-card-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    padding: 10px;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.encoder-card{
+    display: grid;
+    color: white;
+    border: 1px solid rgba(176, 218, 225, 0.571);
+    background-color: rgba(240, 253, 255, 0.158);
+    padding: 20px;
+    gap: 14px;
+}
+.encoder-card h3{
+    font-size: 26px;
+}
+.encoder-card h3:hover {
+    cursor: pointer;
+    color: rgb(182, 220, 236);
+}
+.encoder-card button{
+    padding: 6px 10px;
+    background-color: dimgray;
+    color: rgb(240, 249, 242);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.encoder-card button:hover{
+    color: rgb(175, 235, 215);
+    background-color:rgba(105, 105, 105, 0.671);
+} */
+.downloadCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 14%;
+    gap: 30px;
+}
+.downloadCard button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 10px;
+    background-color: dimgray;
+    color: rgb(240, 249, 242);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 14%;
+}
+.downloadCard button:hover{
+    color: rgb(175, 235, 215);
+    background-color:rgba(105, 105, 105, 0.671);
+}
+
+.encoders-card-container{
+    width: 100%;
+    height: 48vh;
+    margin-bottom: 8px;
+}
+
+
