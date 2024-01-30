@@ -9,14 +9,14 @@
             Rectangle:
                 pos: self.pos
                 size: self.size
-                source: 'wave.png'
+                source: 'wp2691479.webp'
 	BoxLayout:
         orientation: 'vertical'
         Label:
             text: 'Symbol Cipher Page'
         Button:
             text: 'Back to Main'
-            on_press: app.screen_manager.current = 'main'
+            on_press: app.show_main_screen(5) # delay time 5s 
 
 <DcodLayout>
 	cipher:cipher

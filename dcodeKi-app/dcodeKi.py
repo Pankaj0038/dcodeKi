@@ -144,7 +144,7 @@ class DcodLayout(Screen):
 		except:
 			self.ids.string.text = "Nothing to copy!"
 
-class SymbolCipherPage(Screen):
+class SymbolCipherScreen(Screen):
     pass
 class DcodeKiApp(MDApp):
     def build(self):
@@ -152,7 +152,7 @@ class DcodeKiApp(MDApp):
         sm = ScreenManager()
         sm.add_widget(Builder.load_file("splash.kv"))
         sm.add_widget(DcodLayout(name='main'))
-        sm.add_widget(SymbolCipherPage(name='symbol_cipher_page'))
+        sm.add_widget(SymbolCipherScreen(name='symbol_cipher_page'))
         return sm
     def on_start(self):
         # Schedule the transition to the main screen after 5 seconds
