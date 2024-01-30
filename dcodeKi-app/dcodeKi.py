@@ -30,6 +30,9 @@ class DcodLayout(Screen):
 
 	def __init__(self,**kwargs):
 		super(DcodLayout,self).__init__(**kwargs)
+	def open_symbol_cipher_page(self):
+		app = MDApp.get_running_app()
+		app.root.current = 'symbol_cipher_page'
 
 	#fuction which define the functionality of the buttons
 	def press(self,method):
@@ -141,15 +144,16 @@ class DcodLayout(Screen):
 		except:
 			self.ids.string.text = "Nothing to copy!"
 
-
+class SymbolCipherPage(Screen):
+    pass
 class DcodeKiApp(MDApp):
     def build(self):
         self.icon = "logo.png"
         sm = ScreenManager()
         sm.add_widget(Builder.load_file("splash.kv"))
         sm.add_widget(DcodLayout(name='main'))
+        sm.add_widget(SymbolCipherPage(name='symbol_cipher_page'))
         return sm
-
     def on_start(self):
         # Schedule the transition to the main screen after 5 seconds
         Clock.schedule_once(self.show_main_screen, 5)
