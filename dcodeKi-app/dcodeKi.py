@@ -1,4 +1,4 @@
-##!usr/bin/python3
+#!/usr/bin/python3
 #import all the important modules
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty
@@ -54,6 +54,9 @@ class DcodLayout(Screen):
 
 	def __init__(self,**kwargs):
 		super(DcodLayout,self).__init__(**kwargs)
+	def open_symbol_cipher_page(self):
+		app = MDApp.get_running_app()
+		app.root.current = 'symbol_cipher_page'
 
 	#fuction which define the functionality of the buttons
 	def press(self,method):
@@ -331,6 +334,16 @@ class DcodeKiApp(MDApp):
             self.ids.string.text = "An unexpected error occurred while building the app!"
             raise
 
+class SymbolCipherScreen(Screen):
+    pass
+class DcodeKiApp(MDApp):
+    def build(self):
+        self.icon = "logo.png"
+        sm = ScreenManager()
+        sm.add_widget(Builder.load_file("splash.kv"))
+        sm.add_widget(DcodLayout(name='main'))
+        sm.add_widget(SymbolCipherScreen(name='symbol_cipher_page'))
+        return sm
     def on_start(self):
         try:
             # Schedule the transition to the main screen after 5 seconds

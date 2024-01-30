@@ -3,6 +3,21 @@
 	font_size:20
 
 # Overall layout
+<SymbolCipherScreen>:
+    FloatLayout:
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'wp2691479.webp'
+	BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Symbol Cipher Page'
+        Button:
+            text: 'Back to Main'
+            on_press: app.show_main_screen(5) # delay time 5s 
+
 <DcodLayout>
 	cipher:cipher
 	cipher_key:cipher_key
@@ -210,8 +225,7 @@
 				ActionGroup:
 					text: "symbol cipher"
 					mode: 'spinner'
-					ActionButton:
-						text: "coming soon"
+					on_press: root.open_symbol_cipher_page()
 		# Heading
 		Label:
 			id: string2
