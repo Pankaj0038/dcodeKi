@@ -10,6 +10,8 @@ from kivy.clock import Clock
 from encoders import rot47, rot13, mybase64, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58, mybase45, mybase62
 from feature import c2c
 
+import logging
+
 #load the kv file 
 Builder.load_file('dcodeKi.kv')
 
@@ -137,26 +139,48 @@ class DcodLayout(Screen):
 
 	def copy(self):
 		try:
-			c2c.copy(decoded)# copy to clipboard
-		except:
+			c2c.copy(decoded)  # copy to clipboard
+		except Exception as e:
+			logging.error(f"An error occurred in copy: {e}")
 			self.ids.string.text = "Nothing to copy!"
-
+			raise
+			
 
 class DcodeKiApp(MDApp):
     def build(self):
-        self.icon = "logo.png"
-        sm = ScreenManager()
-        sm.add_widget(Builder.load_file("splash.kv"))
-        sm.add_widget(DcodLayout(name='main'))
-        return sm
+        try:
+            self.icon = "logo.png"
+            sm = ScreenManager()
+            sm.add_widget(Builder.load_file("splash.kv"))
+            sm.add_widget(DcodLayout(name='main'))
+            return sm
+        except FileNotFoundError as e:
+            logging.error(f"File not found: {e}")
+            self.ids.string.text = "An error occurred while loading the file!"
+            raise
+        except Exception as e:
+            logging.error(f"An unexpected error occurred in build: {e}")
+            self.ids.string.text = "An unexpected error occurred while building the app!"
+            raise
 
     def on_start(self):
-        # Schedule the transition to the main screen after 5 seconds
-        Clock.schedule_once(self.show_main_screen, 5)
+        try:
+            # Schedule the transition to the main screen after 5 seconds
+            Clock.schedule_once(self.show_main_screen, 5)
+        except Exception as e:
+            logging.error(f"An error occurred in on_start: {e}")
+            self.ids.string.text = "An error occurred while starting the app!"
+            raise
 
     def show_main_screen(self, dt):
-        sm = self.root
-        sm.current = 'main'
+        try:
+            sm = self.root
+            sm.current = 'main'
+        except Exception as e:
+            logging.error(f"An error occurred in show_main_screen: {e}")
+            self.ids.string.text = "An error occurred while showing the main screen!"
+            raise
+
 
 # If executing this file, then run the program
 if __name__ == '__main__':
