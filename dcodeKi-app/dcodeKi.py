@@ -7,7 +7,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 from kivy.clock import Clock
 
-from encoders import rot47, rot13, mybase64, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58, mybase45, mybase62
+from encoders import rot47, rot13, mybase64, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58, mybase45, mybase62, url
 from feature import c2c
 
 import logging
@@ -298,6 +298,22 @@ class DcodLayout(Screen):
 				except Exception as e:
 					logger.error("An error occurred while reversing: %s", str(e))
 					self.ids.string.text = "An error occurred while reversing: " + str(e)
+					raise
+
+			case "url_encode":
+				try:
+					decoded = url.encode(cipher)
+				except Exception as e:
+					logger.error("An error occurred while encoding with url: %s", str(e))
+					self.ids.string.text = "An error occurred while encoding with url: " + str(e)
+					raise
+			
+			case "url_decode":
+				try:
+					decoded = url.decode(cipher)
+				except Exception as e:
+					logger.error("An error occurred while decoding with url: %s", str(e))
+					self.ids.string.text = "An error occurred while decoding with url: " + str(e)
 					raise
 			
 
