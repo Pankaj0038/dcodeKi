@@ -7,7 +7,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 from kivy.clock import Clock
 
-from encoders import rot47, rot13, mybase64, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58, mybase45, mybase62, url, leet
+from encoders import rot47, rot13, mybase64, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58, mybase45, mybase62, url
 from feature import c2c
 
 import logging
@@ -316,21 +316,6 @@ class DcodLayout(Screen):
 					self.ids.string.text = "An error occurred while decoding with url: " + str(e)
 					raise
 
-			case "leet_encode":
-				try:
-					decoded = leet.encode(cipher)
-				except Exception as e:
-					logger.error("An error occurred while encoding with Leet Speak (1337): %s", str(e))
-					self.ids.string.text = "An error occurred while encoding with Leet Speak (1337): " + str(e)
-					raise
-			
-			case "leet_decode":
-				try:
-					decoded = leet.decode(cipher)
-				except Exception as e:
-					logger.error("An error occurred while decoding with Leet Speak (1337): %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with Leet Speak (1337): " + str(e)
-					raise
 			
 
 
