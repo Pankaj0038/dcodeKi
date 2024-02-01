@@ -237,6 +237,20 @@
 						height: 50
 						on_press: root.press('url_decode')
 
+					ActionButton:
+						text: "Leet Speak (or 1337) Encode"
+						font_size: 20 
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('leet_encode')
+
+					ActionButton:
+						text: "Leet Speak (or 1337) Decode"
+						font_size: 20 
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('leet_decode')
+
 				ActionGroup:
 					text: "symbol cipher"
 					mode: 'spinner'
@@ -697,6 +711,35 @@
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('url_decode')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
+
+				Button:
+					text: "Leet Speak (or 1337) Encode"
+					font_size: 20 
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('leet_encode')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
+
+
+				Button:
+					text: "Leet Speak (or 1337) Decode"
+					font_size: 20 
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('leet_decode')
 					canvas.before:
 						Color:
 							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
