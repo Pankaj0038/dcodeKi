@@ -128,7 +128,8 @@ nav {
 }
 .btn-join:hover{
   cursor: pointer;
-  color:rgb(194, 243, 243) ;
+  transform: scale(1.05);
+  background-color: rgb(113, 146, 146);
 }
 
 .footer {
