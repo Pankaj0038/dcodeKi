@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#import all the important modules
+
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty
 from kivymd.app import MDApp
@@ -7,7 +7,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 from kivy.clock import Clock
 
-from encoders import rot47, rot13, mybase64, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58, mybase45, mybase62, url
+from encoders import rot47, rot13, mybase64, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58, mybase45, mybase62, url, leet, gray
 from feature import c2c
 
 import logging
@@ -316,7 +316,37 @@ class DcodLayout(Screen):
 					self.ids.string.text = "An error occurred while decoding with url: " + str(e)
 					raise
 
+			case "leet_encode":
+				try:
+					decoded = leet.encode(cipher)
+				except Exception as e:
+					logger.error("An error occurred while encoding with leet: %s", str(e))
+					self.ids.string.text = "An error occurred while encoding with leet: " + str(e)
+					raise
 			
+			case "leet_decode":
+				try:
+					decoded = leet.decode(cipher)
+				except Exception as e:
+					logger.error("An error occurred while decoding with leet: %s", str(e))
+					self.ids.string.text = "An error occurred while decoding with leet: " + str(e)
+					raise
+			
+			case "gray_encode":
+				try:
+					decoded = gray.encode(cipher)
+				except Exception as e:
+					logger.error("An error occurred while encoding with gray: %s", str(e))
+					self.ids.string.text = "An error occurred while encoding with gray: " + str(e)
+					raise
+			
+			case "gray_decode":
+				try:
+					decoded = gray.decode(cipher)
+				except Exception as e:
+					logger.error("An error occurred while decoding with gray: %s", str(e))
+					self.ids.string.text = "An error occurred while decoding with gray: " + str(e)
+					raise
 
 
 		#replace the text in id="string" by the value of the "decoded" variable
