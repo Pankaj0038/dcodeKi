@@ -11,9 +11,10 @@ function fetchAllContributors() {
         .then(data => {
 
             data.forEach(contributor => {
-                let modified_avatar_url = contributor.avatar_url.replace('v=4', 's=64&v=4');
-                allContributorsGithub.push(contributor.html_url);
-                allContributorsAvatar.push(modified_avatar_url);
+                if (contributor.login !== 'Pankaj0038') {
+                    allContributorsGithub.push(contributor.html_url);
+                    allContributorsAvatar.push(contributor.avatar_url);
+                }
             });
 
             allContributorsGithub.forEach((githubLink, index) => {
