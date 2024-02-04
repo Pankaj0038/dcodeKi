@@ -264,6 +264,20 @@
 						size_hint: (0.20,None)
 						height: 50
 						on_press: root.press('gray_decode')
+					
+					ActionButton:
+						text: "ASCII Encode"
+						font_size: 20 
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('ascii_encode')
+
+					ActionButton:
+						text: "ASCII Decode"
+						font_size: 20 
+						size_hint: (0.20,None)
+						height: 50
+						on_press: root.press('ascii_decode')
 
 				ActionGroup:
 					text: "symbol cipher"
@@ -781,6 +795,34 @@
 					size_hint: (0.20,None)
 					height: 50
 					on_press: root.press('otp_decode')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
+
+				Button:
+					text: "ASCII Encode"
+					font_size: 20 
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('ascii_encode')
+					canvas.before:
+						Color:
+							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
+						RoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [10, 10, 10, 10]
+				
+				Button:
+					text: "ASCII Decode"
+					font_size: 20 
+					size_hint: (0.20,None)
+					height: 50
+					on_press: root.press('ascii_decode')
 					canvas.before:
 						Color:
 							rgba: 0.7, 0.7, 0.7, 1  # Adjust color as needed
