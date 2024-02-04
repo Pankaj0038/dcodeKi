@@ -1,11 +1,8 @@
 const contributor = document.getElementById('contributor');
 
-let allContributorsGithub = ['https://github.com/daksh1210jain','https://github.com/basedBaba','https://github.com/k3s1','https://github.com/SGCODEX','https://github.com/amrikhore86',
-'https://github.com/sukriti-kuila','https://github.com/jack-a129'];
+let allContributorsGithub = [];
 
-let allContributorsAvatar = ['https://avatars.githubusercontent.com/u/137384322?s=64&v=4','https://avatars.githubusercontent.com/u/144726228?s=64&v=4','https://avatars.githubusercontent.com/u/123978864?s=64&v=4',
-'https://avatars.githubusercontent.com/u/64886313?s=64&v=4','https://avatars.githubusercontent.com/u/73484308?s=64&v=4','https://avatars.githubusercontent.com/u/87015685?s=64&v=4',
-'https://avatars.githubusercontent.com/u/113231783?s=64&v=4'];
+let allContributorsAvatar = [];
 
 function fetchAllContributors() {
     allContributorsGithub.forEach((githubLink, index) => {
