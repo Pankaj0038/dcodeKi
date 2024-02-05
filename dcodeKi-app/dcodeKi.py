@@ -7,7 +7,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 from kivy.clock import Clock
 
-from encoders import rot47, rot13, mybase64, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58, mybase45, mybase62, url, leet, gray
+from encoders import rot47, rot13, mybase64, mybase32,extra, text2XOR2text, hex_encode, binary2text, text2binary, morse, atbash, octal, rot8000, vigenere, base58, mybase45, mybase62, url, leet, gray, ascii
 from feature import c2c
 
 import logging
@@ -347,7 +347,22 @@ class DcodLayout(Screen):
 					logger.error("An error occurred while decoding with gray: %s", str(e))
 					self.ids.string.text = "An error occurred while decoding with gray: " + str(e)
 					raise
-
+			
+			case "ascii_encode":
+				try:
+					decoded = ascii.encode(cipher)
+				except Exception as e:
+					logger.error("An error occurred while encoding with ascii: %s", str(e))
+					self.ids.string.text = "An error occurred while encoding with ascii: " + str(e)
+					raise
+			
+			case "ascii_decode":
+				try:
+					decoded = ascii.decode(cipher)
+				except Exception as e:
+					logger.error("An error occurred while decoding with ascii: %s", str(e))
+					self.ids.string.text = "An error occurred while decoding with ascii: " + str(e)
+					raise
 
 		#replace the text in id="string" by the value of the "decoded" variable
 		self.ids.string.text = f'{decoded}'
