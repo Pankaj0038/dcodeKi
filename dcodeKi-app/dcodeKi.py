@@ -59,316 +59,68 @@ class DcodLayout(Screen):
 		app.root.current = 'symbol_cipher_page'
 
 	#fuction which define the functionality of the buttons
-	def press(self,method):
+	def press(self, method):
 		global decoded
 
 		#on button press store the input field in cipher object
 		cipher = self.cipher.text
 		cipher_key = self.cipher_key.text
 		
-		#match case for multiple encoders/decoders (match the button (which is pressed) and apply function according to it)
-		match method:
-			case 'b45':
-				try:
-					decoded = mybase45.decode(cipher) #button == mybase45 decode
-				except Exception as e:
-					logger.error("An error occurred while decoding with base45: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with base45: " + str(e)
-					raise
-			
-			case 'b45e':
-				try:
-					decoded = mybase45.encode(cipher) #button == mybase45 encode
-				except Exception as e:
-					logger.error("An error occurred while encoding with base45: %s", str(e))
-					self.ids.string.text = "An error occurred while encoding with base45: " + str(e)
-					raise
-
-			case 'b62':
-				try:
-					decoded = mybase62.decode(cipher) #button == mybase62 decode
-				except Exception as e:
-					logger.error("An error occurred while decoding with base62: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with base62: " + str(e)
-					raise
-			
-			case 'b62e':
-				try:
-					decoded = mybase62.encode(cipher) #button == mybase62 encode
-				except Exception as e:
-					logger.error("An error occurred while encoding with base62: %s", str(e))
-					self.ids.string.text = "An error occurred while encoding with base62: " + str(e)
-					raise
-			
-			case 'b64':
-				try:
-					decoded = mybase64.decode(cipher) #button == base64 decode 
-				except Exception as e:
-					logger.error("An error occurred while decoding with base64: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with base64: " + str(e)
-					raise
-
-			case 'b64e':
-				try:
-					decoded = mybase64.encode(cipher)#button == base64 encode 
-				except Exception as e:
-					logger.error("An error occurred while encoding with base64: %s", str(e))
-					self.ids.string.text = "An error occurred while encoding with base64: " + str(e)
-					raise
-			
-			case 'rot13':
-				try:
-					decoded = rot13.rot13(cipher)#button == ROT13 code 
-				except Exception as e:
-					logger.error("An error occurred while decoding with rot13: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with rot13: " + str(e)
-					raise
-			
-			case 'rot47':
-				try:
-					decoded = rot47.rot47(cipher) #button == ROT47 code 
-				except Exception as e:
-					logger.error("An error occurred while decoding with rot47: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with rot47: " + str(e)
-					raise
-			
-			case 'b32':
-				try:
-					decoded = mybase32.decode(cipher)#button == base32 decode 
-				except Exception as e:
-					logger.error("An error occurred while decoding with base32: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with base32: " + str(e)
-					raise
-
-			case 'b32e':
-				try:
-					decoded = mybase32.encode(cipher)#button == base32  encode 
-				except Exception as e:
-					logger.error("An error occurred while encoding with base32: %s", str(e))
-					self.ids.string.text = "An error occurred while encoding with base32: " + str(e)
-					raise
-
-			case 't2b':
-				try:
-					decoded = text2binary.encode(cipher)#button == binary code for text 
-				except Exception as e:
-					logger.error("An error occurred while encoding with text2binary: %s", str(e))
-					self.ids.string.text = "An error occurred while encoding with text2binary: " + str(e)
-					raise
-
-			case 'b2t' :
-				try:
-					decoded = binary2text.decode(cipher)#button =text code to binary 
-				except Exception as e:
-					logger.error("An error occurred while decoding with binary2text: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with binary2text: " + str(e)
-					raise
-
-			case "text2XOR2text":
-				try:
-					decoded = text2XOR2text.encode(cipher,cipher_key)
-				except Exception as e:
-					logger.error("An error occurred while encoding with text2XOR2text: %s", str(e))
-					self.ids.string.text = "An error occurred while encoding with text2XOR2text: " + str(e)
-					raise
-
-			case "hex_encode":
-				try:
-					decoded = hex_encode.encode(cipher)#button == hex encode 
-				except Exception as e:
-					logger.error("An error occurred while encoding with hex_encode: %s", str(e))
-					self.ids.string.text = "An error occurred while encoding with hex_encode: " + str(e)
-					raise
-
-			case "hex_decode":
-				try:
-					decoded = hex_encode.decode(cipher)#button == base64 decode 
-				except Exception as e:
-					logger.error("An error occurred while decoding with hex_encode: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with hex_encode: " + str(e)
-					raise
-			
-			case "morse_encode":
-				try:
-					decoded = morse.encode(cipher)#button == Morse encode 
-				except Exception as e:
-					logger.error("An error occurred while encoding with morse: %s", str(e))
-					self.ids.string.text = "An error occurred while encoding with morse: " + str(e)
-					raise
-			
-			case "morse_decode":
-				try:
-					decoded = morse.decode(cipher)#button == Morse decode 
-				except Exception as e:
-					logger.error("An error occurred while decoding with morse: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with morse: " + str(e)
-					raise
-			
-			case "atci":
-				try:
-					decoded = atbash.decatbash(cipher)
-				except Exception as e:
-					logger.error("An error occurred while decoding with atbash: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with atbash: " + str(e)
-					raise
-			
-			case "vigenere_encode":
-				try:
-					decoded = vigenere.encode(cipher, cipher_key)#button == Vigenere encode 
-				except Exception as e:
-					logger.error("An error occurred while encoding with vigenere: %s", str(e))
-					self.ids.string.text = "An error occurred while encoding with vigenere: " + str(e)
-					raise
-			
-			case "vigenere_decode":
-				try:
-					decoded = vigenere.decode(cipher, cipher_key)#button == Vigenere decode
-				except Exception as e:
-					logger.error("An error occurred while decoding with vigenere: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with vigenere: " + str(e)
-					raise
-			
-			case "octal_encode":
-				try:
-					decoded = octal.encode(cipher)#button == octal encode
-				except Exception as e:
-					logger.error("An error occurred while encoding with octal: %s", str(e))
-					self.ids.string.text = "An error occurred while encoding with octal: " + str(e)
-					raise
-			
-			case "octal_decode":
-				try:
-					decoded = octal.decode(cipher)#button == octal decode 
-				except Exception as e:
-					logger.error("An error occurred while decoding with octal: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with octal: " + str(e)
-					raise
-			
-			case "rot8000_encode":
-				try:
-					decoded = rot8000.encode(cipher)#button == ROT8000 encode
-				except Exception as e:
-					logger.error("An error occurred while encoding with rot8000: %s", str(e))
-					self.ids.string.text = "An error occurred while encoding with rot8000: " + str(e)
-					raise
-			
-			case "rot8000_decode":
-				try:
-					decoded = rot8000.decode(cipher)#button == ROT8000 decode
-				except Exception as e:
-					logger.error("An error occurred while decoding with rot8000: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with rot8000: " + str(e)
-					raise
-			
-			case "base58d":
-				try:
-					decoded = base58.base58_decode(cipher)#button == base58d decode 
-				except Exception as e:
-					logger.error("An error occurred while decoding with base58: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with base58: " + str(e)
-					raise
-			
-			case "base58e":
-				try:
-					decoded = base58.base58_encode(cipher) #button == base58d encode 
-				except Exception as e:
-					logger.error("An error occurred while encoding with base58: %s", str(e))
-					self.ids.string.text = "An error occurred while encoding with base58: " + str(e)
-					raise
-			
-			case "upper":
-				try:
-					decoded = extra.Upper(cipher)
-				except Exception as e:
-					logger.error("An error occurred while converting to uppercase: %s", str(e))
-					self.ids.string.text = "An error occurred while converting to uppercase: " + str(e)
-					raise
-			
-			case "lower":
-				try:
-					decoded = extra.Lower(cipher)
-				except Exception as e:
-					logger.error("An error occurred while converting to lowercase: %s", str(e))
-					self.ids.string.text = "An error occurred while converting to lowercase: " + str(e)
-					raise
-			
-			case "reverse":
-				try:
-					decoded = extra.Reverse(cipher)
-				except Exception as e:
-					logger.error("An error occurred while reversing: %s", str(e))
-					self.ids.string.text = "An error occurred while reversing: " + str(e)
-					raise
-
-			case "url_encode":
-				try:
-					decoded = url.encode(cipher)
-				except Exception as e:
-					logger.error("An error occurred while encoding with url: %s", str(e))
-					self.ids.string.text = "An error occurred while encoding with url: " + str(e)
-					raise
-			
-			case "url_decode":
-				try:
-					decoded = url.decode(cipher)
-				except Exception as e:
-					logger.error("An error occurred while decoding with url: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with url: " + str(e)
-					raise
-
-			case "leet_encode":
-				try:
-					decoded = leet.encode(cipher)
-				except Exception as e:
-					logger.error("An error occurred while encoding with leet: %s", str(e))
-					self.ids.string.text = "An error occurred while encoding with leet: " + str(e)
-					raise
-			
-			case "leet_decode":
-				try:
-					decoded = leet.decode(cipher)
-				except Exception as e:
-					logger.error("An error occurred while decoding with leet: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with leet: " + str(e)
-					raise
-			
-			case "gray_encode":
-				try:
-					decoded = gray.encode(cipher)
-				except Exception as e:
-					logger.error("An error occurred while encoding with gray: %s", str(e))
-					self.ids.string.text = "An error occurred while encoding with gray: " + str(e)
-					raise
-			
-			case "gray_decode":
-				try:
-					decoded = gray.decode(cipher)
-				except Exception as e:
-					logger.error("An error occurred while decoding with gray: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with gray: " + str(e)
-					raise
-			
-			case "ascii_encode":
-				try:
-					decoded = ascii.encode(cipher)
-				except Exception as e:
-					logger.error("An error occurred while encoding with ascii: %s", str(e))
-					self.ids.string.text = "An error occurred while encoding with ascii: " + str(e)
-					raise
-			
-			case "ascii_decode":
-				try:
-					decoded = ascii.decode(cipher)
-				except Exception as e:
-					logger.error("An error occurred while decoding with ascii: %s", str(e))
-					self.ids.string.text = "An error occurred while decoding with ascii: " + str(e)
-					raise
-
-		#replace the text in id="string" by the value of the "decoded" variable
+		# Dictionary to map method names to corresponding functions and error messages
+		method_map = {
+			'b45': (mybase45.decode, 'An error occurred while decoding with base45: %s'),
+			'b45e': (mybase45.encode, 'An error occurred while encoding with base45: %s'),
+			'b62': (mybase62.decode, 'An error occurred while decoding with base62: %s'),
+			'b62e': (mybase62.encode, 'An error occurred while encoding with base62: %s'),
+			'b64': (mybase64.decode, 'An error occurred while decoding with base64: %s'),
+			'b64e': (mybase64.encode, 'An error occurred while encoding with base64: %s'),
+			'rot13': (rot13.rot13, 'An error occurred while decoding with rot13: %s'),
+			'rot47': (rot47.rot47, 'An error occurred while decoding with rot47: %s'),
+			'b32': (mybase32.decode, 'An error occurred while decoding with base32: %s'),
+			'b32e': (mybase32.encode, 'An error occurred while encoding with base32: %s'),
+			't2b': (text2binary.encode, 'An error occurred while encoding with text2binary: %s'),
+			'b2t': (binary2text.decode, 'An error occurred while decoding with binary2text: %s'),
+			'text2XOR2text': (text2XOR2text.encode, 'An error occurred while encoding with text2XOR2text: %s'),
+			'hex_encode': (hex_encode.encode, 'An error occurred while encoding with hex_encode: %s'),
+			'hex_decode': (hex_encode.decode, 'An error occurred while decoding with hex_encode: %s'),
+			'morse_encode': (morse.encode, 'An error occurred while encoding with morse: %s'),
+			'morse_decode': (morse.decode, 'An error occurred while decoding with morse: %s'),
+			'atci': (atbash.decatbash, 'An error occurred while decoding with atbash: %s'),
+			'vigenere_encode': (vigenere.encode, 'An error occurred while encoding with vigenere: %s'),
+			'vigenere_decode': (vigenere.decode, 'An error occurred while decoding with vigenere: %s'),
+			'octal_encode': (octal.encode, 'An error occurred while encoding with octal: %s'),
+			'octal_decode': (octal.decode, 'An error occurred while decoding with octal: %s'),
+			'rot8000_encode': (rot8000.encode, 'An error occurred while encoding with rot8000: %s'),
+			'rot8000_decode': (rot8000.decode, 'An error occurred while decoding with rot8000: %s'),
+			'base58d': (base58.base58_decode, 'An error occurred while decoding with base58: %s'),
+			'base58e': (base58.base58_encode, 'An error occurred while encoding with base58: %s'),
+			'upper': (extra.Upper, 'An error occurred while converting to uppercase: %s'),
+			'lower': (extra.Lower, 'An error occurred while converting to lowercase: %s'),
+			'reverse': (extra.Reverse, 'An error occurred while reversing: %s'),
+			'url_encode': (url.encode, 'An error occurred while encoding with url: %s'),
+			'url_decode': (url.decode, 'An error occurred while decoding with url: %s'),
+			'leet_encode': (leet.encode, 'An error occurred while encoding with leet: %s'),
+			'leet_decode': (leet.decode, 'An error occurred while decoding with leet: %s'),
+			'gray_encode': (gray.encode, 'An error occurred while encoding with gray: %s'),
+			'gray_decode': (gray.decode, 'An error occurred while decoding with gray: %s'),
+			'ascii_encode': (ascii.encode, 'An error occurred while encoding with ascii: %s'),
+			'ascii_decode': (ascii.decode, 'An error occurred while decoding with ascii: %s'),
+		}
+		
+		# Call the corresponding function based on the method
+		try:
+			function, error_message = method_map[method]
+			decoded = function(cipher, cipher_key) if method in {'text2XOR2text', 'vigenere_encode', 'vigenere_decode'} else function(cipher)
+		except Exception as e:
+			logger.error(error_message % str(e))
+			self.ids.string.text = error_message % str(e)
+			raise
+		
+		# Replace the text in id="string" by the value of the "decoded" variable
 		self.ids.string.text = f'{decoded}'
-		#after printing the output clear the input field
-		self.cipher.text=''
-		self.cipher_key.text=''
+		# After printing the output, clear the input field
+		self.cipher.text = ''
+		self.cipher_key.text = ''
 
 	def copy(self):
 		try:
