@@ -115,7 +115,8 @@ class DcodLayout(Screen):
 		except Exception as e:
 			logger.error(error_message % str(e))
 			self.ids.string.text = error_message % str(e)
-			raise
+			decoded = "Invalid input! Check the logs for more details."
+			
 		
 		# Replace the text in id="string" by the value of the "decoded" variable
 		self.ids.string.text = f'{decoded}'
@@ -129,7 +130,6 @@ class DcodLayout(Screen):
 		except Exception as e:
 			logging.error(f"An error occurred in copy: {e}")
 			self.ids.string.text = "Nothing to copy!"
-			raise
 			
 
 class DcodeKiApp(MDApp):
