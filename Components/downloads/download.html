@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Page</title>
-    <link rel="icon" type="image/x-icon" href="../../dcodeKi-app/logo.png">
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="./download.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Page</title>
+  <link rel="icon" type="image/x-icon" href="../../dcodeKi-app/logo.png">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="./download.css">
 </head>
+
 <body>
   <h2 class="card-container-heading">Download Your Files</h2>
   <!-- <div class="encoders-card-container">
@@ -45,7 +47,7 @@
     <button>macOS <img src="https://kivy.org/doc/stable/_images/macosx.png" alt=""></button>
     <button>Android <img src="https://kivy.org/doc/stable/_images/android.png" alt=""></button>
   </div>
-    <footer class="footer alter">
+  <footer class="footer alter">
     </div>
     <ul class="social-icon">
       <li class="social-icon__item">
@@ -64,11 +66,35 @@
         </a>
       </li>
     </ul>
-  <p>&copy;2024 Pankaj Barman | All Rights Reserved</p>
+    <p>&copy;2024 Pankaj Barman | All Rights Reserved</p>
   </footer>
-  <script
-  type="module"
-  src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    var tl = gsap.timeline();
+
+    tl.from(".card-container-heading", {
+      opacity: 0,
+      scale:1.2,
+      delay: 0.5,
+      duration: 1,
+    })
+
+    tl.from(".encoders-card-container button", {
+      duration: 1,
+      opacity: 0,
+      scale:1.2,
+    })
+    tl.from("footer", {
+      opacity: 0,
+    })
+
+  </script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 </body>
+
 </html>

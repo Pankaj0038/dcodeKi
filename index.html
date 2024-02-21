@@ -31,10 +31,10 @@
           /></a>
         </div>
         <div class="navigation-items" id="navigation-items">
-          <a href="./index.html">About</a>
-          <a href="./Components/downloads/download.html" target="_blank">Downloads</a>
-          <a href="./Components/contributors/contributors.html" target="_blank">Contributors</a>
-          <a href="./Components/conatact_page/contact.html" target="_blank"
+          <a class="stag" href="./index.html">About</a>
+          <a class="stag" href="./Components/downloads/download.html" target="_blank">Downloads</a>
+          <a class="stag" href="./Components/contributors/contributors.html" target="_blank">Contributors</a>
+          <a class="stag" href="./Components/conatact_page/contact.html" target="_blank"
             >ContactUs</a
           >
         </div>
@@ -82,7 +82,49 @@
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
     ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+      var tl = gsap.timeline();
+      
+      tl.from(".nav-bar", {
+        y:-20,
+        opacity:0,
+        delay:0.5,
+        duration:1,
+      })
+
+      tl.from(".logo-container", {
+        x:-50,
+        duration:1,
+        opacity:0,
+      })
+
+      tl.from(".hero-left h3", {
+        opacity:0,
+        x:-20,
+      })
+      tl.from(".hero-left p", {
+        opacity:0,
+        x:20,
+      })
+
+      tl.from(".btn-join,.hero-right img", {
+        opacity:0,
+        scale:1.3,
+      })
+
+      tl.from("footer", {
+        opacity:0,
+      })
+
+    </script>
+
+
   </body>
+
+
   <script>
     let openHam = document.querySelector("#openHam");
     let closeHam = document.querySelector("#closeHam");
