@@ -235,3 +235,16 @@ nav {
     font-size: 24px;
   }
 }
+
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track{
+  background: #d1e5ff;
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(#000000,#7ED6DF);
+}
