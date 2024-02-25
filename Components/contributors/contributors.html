@@ -11,6 +11,32 @@
 </head>
 
 <body>
+    <header class="nav-bar">
+        <nav>
+          <div class="logo-container">
+            <a href="./index.html"
+              ><img
+                class="logo"
+                src="../../dcodeKi-app/logo.png"
+                alt="align box"
+                width="50"
+                height="50"
+            /></a>
+          </div>
+          <div class="navigation-items" id="navigation-items">
+            <a class="stag" href="../../index.html">About</a>
+            <a class="stag" href="../downloads/download.html" target="_blank">Downloads</a>
+            <a class="stag" href="#" target="_blank">Contributors</a>
+            <a class="stag" href="../conatact_page/contact.html" target="_blank"
+              >ContactUs</a
+            >
+          </div>
+          <div class="hamburger">
+            <span id="openHam">&#9776;</span>
+            <span id="closeHam">&#x2716;</span>
+          </div>
+        </nav>
+      </header>
     <!-- Contributors section -->
     <div class="contributors">
         <h2 class="heading">Our Valuable Contributors</h2>
@@ -65,6 +91,25 @@
         <p>&copy;2024 Pankaj Barman | All Rights Reserved</p>
     </footer>
 
+    <script>
+        let openHam = document.querySelector("#openHam");
+        let closeHam = document.querySelector("#closeHam");
+        let navigationItems = document.querySelector("#navigation-items");
+    
+        const hamburgerEvent = (navigation, close, open) => {
+          navigationItems.style.display = navigation;
+          closeHam.style.display = close;
+          openHam.style.display = open;
+        };
+    
+        openHam.addEventListener("click", () =>
+          hamburgerEvent("flex", "block", "none")
+        );
+        closeHam.addEventListener("click", () =>
+          hamburgerEvent("none", "none", "block")
+        );
+      </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -72,12 +117,17 @@
     <script>
         var tl = gsap.timeline();
 
+        tl.from(".nav-bar", {
+        y:-20,
+        opacity:0,
+        delay:0.5,
+        duration:1,
+      })
 
         tl.from(".heading", {
             opacity:0,
             duration: 1,
             scale:1.2,
-            delay:0.5,
         })
 
         tl.from("#contributor", {

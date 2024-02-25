@@ -59,17 +59,55 @@ nav {
   display: flex;
   gap: 40px;
 }
+
 .navigation-items > a {
   color: ghostwhite;
   text-decoration: none;
   font-weight: 600;
   font-size: 24px;
   transition: 0.4s ease-in-out;
+  position: relative;
 }
+
+.navigation-items a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 3px;
+  width: 0%;
+  background-color: rgb(0, 255, 208);
+  border-radius: 2px;
+  transition: all 0.2s ease-in-out;
+}
+
+.navigation-items a::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -5px;
+  height: 3px;
+  width: 0%;
+  background-color: rgb(0, 255, 208);
+  border-radius: 2px;
+}
+.navigation-items a:hover::before {
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.navigation-items a:hover::after {
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
 .navigation-items > a:hover {
-  color: rgb(118, 236, 214);
+  color: rgb(0, 255, 208);
   font-weight: 700;
 }
+
+
+
 .hamburger {
   display: none;
   font-size: 38px;

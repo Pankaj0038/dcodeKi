@@ -29,7 +29,7 @@ body {
     font-size: 3.5rem;
     margin-top: 35px;
     margin-bottom: 25px;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;   
 }
 
 .contributors h1:hover, .contributors h2:hover {
@@ -45,6 +45,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     height: 30vh;
+    z-index: -1;
 }
 
 .contributor-card {

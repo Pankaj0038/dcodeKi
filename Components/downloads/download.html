@@ -11,6 +11,24 @@
 </head>
 
 <body>
+  <header class="nav-bar">
+    <nav>
+      <div class="logo-container">
+        <a href="./index.html"><img class="logo" src="../../dcodeKi-app/logo.png" alt="align box" width="50"
+            height="50" /></a>
+      </div>
+      <div class="navigation-items" id="navigation-items">
+        <a class="stag" href="../../index.html">About</a>
+        <a class="stag" href="#" target="_blank">Downloads</a>
+        <a class="stag" href="../contributors/contributors.html" target="_blank">Contributors</a>
+        <a class="stag" href="../conatact_page/contact.html" target="_blank">ContactUs</a>
+      </div>
+      <div class="hamburger">
+        <span id="openHam">&#9776;</span>
+        <span id="closeHam">&#x2716;</span>
+      </div>
+    </nav>
+  </header>
   <h2 class="card-container-heading">Download Your Files</h2>
   <!-- <div class="encoders-card-container">
     <div class="encoder-card"><h3>B64 Decode</h3><button>Download</button></div>
@@ -77,17 +95,23 @@
   <script>
     var tl = gsap.timeline();
 
+    tl.from(".nav-bar", {
+      y: -20,
+      opacity: 0,
+      delay: 0.5,
+      duration: 1,
+    })
+
     tl.from(".card-container-heading", {
       opacity: 0,
-      scale:1.2,
-      delay: 0.5,
+      scale: 1.2,
       duration: 1,
     })
 
     tl.from(".encoders-card-container button", {
       duration: 1,
       opacity: 0,
-      scale:1.2,
+      scale: 1.2,
     })
     tl.from("footer", {
       opacity: 0,
@@ -95,6 +119,25 @@
 
   </script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+  <script>
+    let openHam = document.querySelector("#openHam");
+    let closeHam = document.querySelector("#closeHam");
+    let navigationItems = document.querySelector("#navigation-items");
+
+    const hamburgerEvent = (navigation, close, open) => {
+      navigationItems.style.display = navigation;
+      closeHam.style.display = close;
+      openHam.style.display = open;
+    };
+
+    openHam.addEventListener("click", () =>
+      hamburgerEvent("flex", "block", "none")
+    );
+    closeHam.addEventListener("click", () =>
+      hamburgerEvent("none", "none", "block")
+    );
+  </script>
 </body>
 
 </html>
