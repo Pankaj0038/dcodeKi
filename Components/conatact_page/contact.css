@@ -18,12 +18,19 @@
   .background {
     display: flex;
     min-height: 80vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .container {
     flex: 0 1 700px;
     margin: auto;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
   }
   
   .screen {
@@ -237,4 +244,8 @@
   
   ::-webkit-scrollbar-thumb{
     background: linear-gradient(#000000,#7ED6DF);
+  }
+
+  .nav-bar {
+    width: 100%;
   }
